@@ -1,15 +1,15 @@
 export interface VideoDocument {
   id: string;
   name: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface YouTubeLink {
   id: string;
   url: string;
   title: string;
-  addedAt: Date;
+  addedAt: string;
   watched: boolean;
 }
 

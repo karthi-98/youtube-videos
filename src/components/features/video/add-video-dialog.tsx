@@ -31,11 +31,26 @@ export function AddVideoDialog({ docId }: AddVideoDialogProps) {
     if (open && formRef.current) {
       gsap.fromTo(
         formRef.current,
-        { opacity: 0, scale: 0.95 },
-        { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(1.7)' }
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 }
       )
     }
   }, [open])
+
+  const handleClose = async () => {
+    if (formRef.current) {
+      await gsap.to(formRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.35,
+        ease: 'power2.in',
+      })
+    }
+    setOpen(false)
+    setUrl('')
+    setTitle('')
+    setError('')
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -58,9 +73,7 @@ export function AddVideoDialog({ docId }: AddVideoDialogProps) {
     const result = await addYouTubeLink(docId, url, title)
 
     if (result.success) {
-      setUrl('')
-      setTitle('')
-      setOpen(false)
+      await handleClose()
     } else {
       setError(result.error || 'Failed to add video')
     }
@@ -123,7 +136,7 @@ export function AddVideoDialog({ docId }: AddVideoDialogProps) {
             <Button
               type="button"
               variant="outline"
-              onClick={() => setOpen(false)}
+              onClick={handleClose}
               disabled={isLoading}
             >
               Cancel

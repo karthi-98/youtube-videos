@@ -13,8 +13,8 @@ export async function getVideoDocuments() {
       return {
         id: doc.id,
         name: data.name || doc.id,
-        createdAt: data.createdAt?.toDate() || new Date(),
-        updatedAt: data.updatedAt?.toDate() || new Date(),
+        createdAt: (data.createdAt?.toDate() || new Date()).toISOString(),
+        updatedAt: (data.updatedAt?.toDate() || new Date()).toISOString(),
       }
     })
 
@@ -39,15 +39,15 @@ export async function getVideoDocumentById(docId: string) {
       id: link.id,
       url: link.url,
       title: link.title,
-      addedAt: link.addedAt?.toDate() || new Date(),
+      addedAt: (link.addedAt?.toDate() || new Date()).toISOString(),
       watched: link.watched || false,
     }))
 
     const document = {
       id: docSnap.id,
       name: data.name || docSnap.id,
-      createdAt: data.createdAt?.toDate() || new Date(),
-      updatedAt: data.updatedAt?.toDate() || new Date(),
+      createdAt: (data.createdAt?.toDate() || new Date()).toISOString(),
+      updatedAt: (data.updatedAt?.toDate() || new Date()).toISOString(),
       links,
     }
 

@@ -42,26 +42,6 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
     }
   }, [])
 
-  const handleMouseEnter = () => {
-    if (imageRef.current) {
-      gsap.to(imageRef.current, {
-        scale: 1.05,
-        duration: 0.3,
-        ease: 'power2.out',
-      })
-    }
-  }
-
-  const handleMouseLeave = () => {
-    if (imageRef.current) {
-      gsap.to(imageRef.current, {
-        scale: 1,
-        duration: 0.3,
-        ease: 'power2.out',
-      })
-    }
-  }
-
   const handleDelete = async () => {
     if (!confirm('Are you sure you want to delete this video?')) return
 
@@ -97,9 +77,7 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
   return (
     <div
       ref={cardRef}
-      className="group rounded-lg border bg-card overflow-hidden transition-shadow hover:shadow-lg w-full max-w-sm"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className="group rounded-lg border bg-card overflow-hidden w-full max-w-sm cursor-pointer"
     >
       {/* Thumbnail - 16:9 aspect ratio */}
       <div ref={imageRef} className="relative w-full aspect-video bg-muted overflow-hidden">
@@ -165,20 +143,20 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
       </div>
 
       {/* Content */}
-      <div ref={contentRef} className="p-4">
-        <h3 className="font-semibold text-base line-clamp-2 mb-2">
+      <div ref={contentRef} className="p-4 flex flex-col">
+        <h3 className="font-semibold text-base line-clamp-2 mb-2 min-h-[3rem]">
           {link.title}
         </h3>
 
         <p className="text-sm text-muted-foreground mb-4">
-          Added: {link.addedAt.toLocaleDateString()}
+          Added: {new Date(link.addedAt).toLocaleDateString()}
         </p>
 
         <Button
           variant="default"
           size="sm"
           onClick={() => window.open(link.url, '_blank')}
-          className="w-full"
+          className="w-full mt-auto"
         >
           <PlayIcon className="size-4" />
           Watch Now

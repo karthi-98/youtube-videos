@@ -36,7 +36,7 @@ export default async function VideoDocumentPage({ params }: PageProps) {
           <div>
             <h2 className="text-2xl font-bold mb-1">{document.name}</h2>
             <p className="text-sm text-muted-foreground">
-              Last updated: {document.updatedAt.toLocaleDateString()}
+              Last updated: {new Date(document.updatedAt).toLocaleDateString()}
             </p>
           </div>
           <AddVideoDialog docId={id} />
