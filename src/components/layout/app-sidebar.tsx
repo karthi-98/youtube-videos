@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { VideoIcon, HomeIcon, PlaySquare, FolderOpen } from 'lucide-react'
+import { VideoIcon, HomeIcon, PlaySquare, FolderOpen, Dumbbell } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -60,6 +60,23 @@ export function AppSidebar({ documents }: AppSidebarProps) {
                   <Link href="/" className="flex items-center gap-3">
                     <HomeIcon className="size-4" />
                     <span>Home</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathname.startsWith('/training')}
+                  className={cn(
+                    "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                    pathname.startsWith('/training')
+                      ? "bg-primary/10 text-primary hover:bg-primary/15"
+                      : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                  )}
+                >
+                  <Link href="/training" className="flex items-center gap-3">
+                    <Dumbbell className="size-4" />
+                    <span>Training</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

@@ -1,0 +1,1606 @@
+{
+    "program_info": {
+        "title": "15-Month Planche Mastery Program",
+        "start_age": 27,
+        "target_skill": "Full Planche",
+        "training_frequency": "6 days per week",
+        "rest_days": "1 day per week (recommended: Sunday)",
+        "important_notes": [
+            "Always warm up for 10-15 minutes before training",
+            "Focus on form over reps/time",
+            "If you feel pain (not fatigue), rest immediately",
+            "Sleep 7-9 hours per night for recovery",
+            "Stay hydrated and eat adequate protein"
+        ]
+    },
+    "months": [{
+            "month": 1,
+            "phase": "Foundation Building",
+            "goals": [
+                "Build base pushing strength",
+                "Develop pulling strength to 5+ pull-ups",
+                "Begin core compression work",
+                "Condition wrists and shoulders"
+            ],
+            "bonus_skills_to_work": ["Crow Pose", "Handstand Hold Against Wall"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Push Day",
+                    "checklist": [
+                        "Warm-up: Wrist circles, shoulder rotations, cat-cow stretches (10 min)",
+                        "Push-ups: 4 sets of 20-25 reps",
+                        "Diamond push-ups: 3 sets of 10-15 reps",
+                        "Pike push-ups: 3 sets of 8-12 reps",
+                        "Plank hold: 3 sets of 45-60 seconds",
+                        "Scapular push-ups: 3 sets of 15 reps",
+                        "Crow pose practice: 3 attempts, hold as long as possible"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Day",
+                    "checklist": [
+                        "Warm-up: Arm circles, dead hangs, band pull-aparts (10 min)",
+                        "Pull-up negatives: 5 sets of 3-5 reps (5 second descent)",
+                        "Australian rows: 4 sets of 12-15 reps",
+                        "Scapular pulls: 3 sets of 10 reps",
+                        "Hollow body hold: 3 sets of 30-45 seconds",
+                        "Leg raises (bent knee): 3 sets of 10 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core & Compression",
+                    "checklist": [
+                        "Warm-up: Dynamic stretching (10 min)",
+                        "Hollow body hold: 4 sets of 45 seconds",
+                        "Arch body hold: 4 sets of 30 seconds",
+                        "V-ups: 3 sets of 10 reps",
+                        "Compression work (seated, pulling knees to chest): 3 sets of 30 seconds",
+                        "Reverse plank: 3 sets of 30 seconds",
+                        "Handstand wall hold: 3 sets of 20-30 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Day (Strength Focus)",
+                    "checklist": [
+                        "Warm-up: Full body (10 min)",
+                        "Pseudo planche push-ups (lean forward): 4 sets of 6-10 reps",
+                        "Dips: 4 sets of 15-20 reps",
+                        "Decline push-ups: 3 sets of 12-15 reps",
+                        "Plank to downward dog: 3 sets of 10 reps",
+                        "Shoulder taps in plank: 3 sets of 20 taps total",
+                        "Crow pose: 3-5 attempts, 10+ seconds each"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Mobility",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 5 sets to failure (aim for 2-3 reps minimum)",
+                        "Chin-ups: 3 sets to failure",
+                        "Face pulls or band pull-aparts: 3 sets of 15 reps",
+                        "German hangs (light): 3 sets of 15-20 seconds",
+                        "Shoulder flexibility work: 10 minutes",
+                        "Pike stretches: 3 sets of 45 seconds"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill & Endurance",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Push-ups: 100 total (break into as many sets as needed)",
+                        "Wall handstand hold: 5 sets of 30 seconds",
+                        "Frog stand attempts: 5 attempts, hold as long as possible",
+                        "L-sit tuck progression: 3 sets of 15-20 seconds",
+                        "Wrist conditioning: Rice bucket or wrist rolls",
+                        "Full body stretching: 15 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest or very light activity (walking, yoga)",
+                        "Foam rolling and mobility work (optional)",
+                        "Review weekly progress and adjust if needed",
+                        "Meal prep for the week",
+                        "Ensure 8+ hours sleep"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you do 30+ push-ups consistently?",
+                "Can you do 3-5 pull-ups?",
+                "Can you hold crow pose for 10+ seconds?",
+                "Can you hold tuck L-sit for 10+ seconds?"
+            ]
+        },
+        {
+            "month": 2,
+            "phase": "Foundation Building (Progressive)",
+            "goals": [
+                "Reach 8+ pull-ups",
+                "Hold tuck L-sit for 20 seconds",
+                "Master crow pose (30+ seconds)",
+                "Begin frog stand work"
+            ],
+            "bonus_skills_to_work": ["Frog Stand", "Wall Handstand 45+ seconds"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Push Day (Planche Prep)",
+                    "checklist": [
+                        "Warm-up: Wrist mobility, shoulder prep (10 min)",
+                        "Pseudo planche push-ups (more lean): 5 sets of 8-10 reps",
+                        "Frog stand: 5 sets of max hold (goal: 20+ seconds)",
+                        "Planche lean holds: 4 sets of 15-20 seconds",
+                        "Pike push-ups: 4 sets of 10-12 reps",
+                        "Protraction push-ups: 3 sets of 12 reps",
+                        "Crow pose: 3 sets of 30+ seconds"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Day",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 5 sets of 5-6 reps",
+                        "Archer rows: 3 sets of 8 reps each side",
+                        "Front lever tuck pulls: 3 sets of 5 reps",
+                        "Hollow body hold: 4 sets of 60 seconds",
+                        "Hanging leg raises (bent knee): 3 sets of 10 reps",
+                        "Scapular strength work: 3 sets of 12 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core & Straight Arm Strength",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Planche lean holds: 5 sets of 20-25 seconds",
+                        "Tuck L-sit: 4 sets of 20-30 seconds",
+                        "Compression drills: 4 sets of 45 seconds",
+                        "Hollow body rocks: 3 sets of 20 reps",
+                        "RTO support hold (on rings if available): 3 sets of 20-30 seconds",
+                        "Handstand hold: 4 sets of 40-50 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Strength",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted push-ups (backpack): 4 sets of 12-15 reps",
+                        "Dips: 5 sets of 20-25 reps",
+                        "Decline pike push-ups: 4 sets of 10 reps",
+                        "Pseudo planche holds: 4 sets of 20 seconds",
+                        "Plank variations: 3 sets of 60 seconds each",
+                        "Frog stand to headstand attempts: 5 attempts"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Mobility",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 6 sets of 6-7 reps",
+                        "Wide grip pull-ups: 3 sets of 5 reps",
+                        "Skin the cat (if able): 3 sets of 3-5 reps",
+                        "German hangs: 3 sets of 20-25 seconds",
+                        "Shoulder dislocates with band: 3 sets of 15 reps",
+                        "Pancake stretch: 3 sets of 60 seconds"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Integration",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Frog stand practice: 6 sets of max hold",
+                        "Wall handstand: 5 sets of 45-60 seconds",
+                        "L-sit progression work: 5 sets of 25-30 seconds",
+                        "Push-up variations circuit: 3 rounds (wide, diamond, pike)",
+                        "Core finisher: 100 total hollow body rocks",
+                        "Full flexibility routine: 20 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Active recovery: light walk or swim",
+                        "Stretch and mobility work",
+                        "Track progress: take photos/videos",
+                        "Plan next week's training",
+                        "Prioritize sleep"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you do 8+ pull-ups?",
+                "Can you hold crow pose for 30+ seconds?",
+                "Can you hold frog stand for 20+ seconds?",
+                "Can you hold tuck L-sit for 20+ seconds?"
+            ]
+        },
+        {
+            "month": 3,
+            "phase": "Tuck Planche Introduction",
+            "goals": [
+                "Achieve 10+ pull-ups",
+                "Hold tuck L-sit for 30 seconds",
+                "Begin tuck planche holds (10+ seconds)",
+                "Master frog stand (45+ seconds)"
+            ],
+            "bonus_skills_to_work": ["Tuck Front Lever", "Free Standing Handstand (begin)"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Progression Day",
+                    "checklist": [
+                        "Warm-up: Comprehensive wrist and shoulder prep (12 min)",
+                        "Frog stand: 3 sets of 45-60 seconds",
+                        "Tuck planche attempts: 6 sets of max hold (aim 5-10 seconds)",
+                        "Planche lean holds: 4 sets of 25-30 seconds",
+                        "Pseudo planche push-ups (deep lean): 4 sets of 8 reps",
+                        "Protraction holds elevated: 3 sets of 20 seconds",
+                        "Scapular push-ups: 4 sets of 15 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 5 sets of 8-10 reps",
+                        "Weighted pull-ups (light): 3 sets of 5 reps",
+                        "Tuck front lever holds: 4 sets of 10-15 seconds",
+                        "Front lever negatives: 3 sets of 5 reps",
+                        "Straight arm lat pulldowns (if gym access): 3 sets of 12",
+                        "Hanging leg raises (straight leg): 3 sets of 8 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core & Compression",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Tuck L-sit: 5 sets of 30 seconds",
+                        "One-leg L-sit: 3 sets of 15 seconds each leg",
+                        "V-ups: 4 sets of 12 reps",
+                        "Compression training: 4 sets of 60 seconds",
+                        "Hollow body hold: 4 sets of 75 seconds",
+                        "Handstand work: 5 sets of 50-60 seconds",
+                        "Pike flexibility: 15 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Power",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted dips: 4 sets of 12-15 reps",
+                        "Explosive push-ups: 4 sets of 10 reps",
+                        "Pike push-ups (elevated feet): 4 sets of 10 reps",
+                        "Tuck planche push-up negatives: 3 sets of 5 reps",
+                        "Planche lean to push-up: 3 sets of 6 reps",
+                        "RTO support holds: 4 sets of 30 seconds"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Mobility",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Archer pull-ups: 4 sets of 5 reps each side",
+                        "Wide grip pull-ups: 4 sets of 8 reps",
+                        "Muscle-up progression (if ready): 3 sets of attempts",
+                        "Skin the cat: 3 sets of 5 reps",
+                        "German hang holds: 3 sets of 30 seconds",
+                        "Shoulder and thoracic mobility: 20 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skills & Endurance",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Tuck planche practice: 8 sets of max hold",
+                        "Frog stand: 3 sets of 60 seconds",
+                        "Handstand practice (chest to wall): 5 sets of 60 seconds",
+                        "L-sit variations: 5 sets of 30 seconds different variations",
+                        "Push-up endurance: 150 total reps (any sets)",
+                        "Full body flexibility: 25 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest day",
+                        "Gentle yoga or stretching (optional)",
+                        "Ice bath or contrast shower (optional)",
+                        "Journal training progress",
+                        "Meal prep and recovery nutrition"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you do 10+ clean pull-ups?",
+                "Can you hold tuck planche for 10+ seconds?",
+                "Can you hold tuck L-sit for 30+ seconds?",
+                "Can you hold tuck front lever for 10+ seconds?"
+            ]
+        },
+        {
+            "month": 4,
+            "phase": "Tuck Planche Consolidation",
+            "goals": [
+                "Hold tuck planche for 20+ seconds",
+                "Perform 3-5 tuck planche push-ups",
+                "Achieve L-sit for 40+ seconds",
+                "Build 12+ pull-ups"
+            ],
+            "bonus_skills_to_work": ["Advanced Tuck Front Lever", "Handstand Push-ups (wall assisted)"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Strength",
+                    "checklist": [
+                        "Warm-up: Extended mobility (15 min)",
+                        "Tuck planche: 6 sets of 15-20 seconds",
+                        "Tuck planche push-up negatives: 4 sets of 5 reps",
+                        "Planche leans (advanced): 4 sets of 30 seconds",
+                        "Frog stand to tuck planche transitions: 4 sets of 5 transitions",
+                        "Pseudo planche push-ups (maximum lean): 4 sets of 10 reps",
+                        "Elevated protraction holds: 3 sets of 30 seconds"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Power",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted pull-ups: 5 sets of 6-8 reps",
+                        "Explosive pull-ups: 3 sets of 5 reps",
+                        "Advanced tuck front lever: 5 sets of 15 seconds",
+                        "Front lever rows (tuck): 3 sets of 6 reps",
+                        "One-arm hang practice: 3 sets of 15 seconds each arm",
+                        "Core: Dragon flags (tuck): 3 sets of 8 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Compression & Core",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Full L-sit attempts: 5 sets of max hold",
+                        "L-sit to V-sit transitions: 3 sets of 5 transitions",
+                        "Compression pulls: 5 sets of 30 reps",
+                        "Hollow body to arch rocks: 3 sets of 20 transitions",
+                        "Manna lean prep: 3 sets of 20 seconds",
+                        "Handstand shoulder taps: 3 sets of 20 taps",
+                        "Flexibility circuit: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Variation",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Handstand push-ups (wall): 4 sets of 8-10 reps",
+                        "Ring dips (if available): 4 sets of 12 reps",
+                        "Pseudo planche to HSPU: 3 sets of 5 reps",
+                        "Tuck planche hold into push: 4 sets (10 sec hold + 5 push-ups)",
+                        "Korean dips: 3 sets of 8 reps",
+                        "Straight bar dips: 4 sets of 15 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Endurance & Mobility",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 6 sets of 10-12 reps",
+                        "Typewriter pull-ups: 3 sets of 6 total reps",
+                        "Muscle-up attempts/progressions: 5 sets",
+                        "Skin the cat: 4 sets of 6 reps",
+                        "Shoulder dislocates: 4 sets of 20 reps",
+                        "Full upper body mobility: 25 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Day & Testing",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Tuck planche max hold test: 3 attempts",
+                        "Tuck planche push-ups: 5 sets to failure",
+                        "Handstand free-standing attempts: 10 attempts",
+                        "L-sit variations circuit: 5 rounds",
+                        "Pull-up max set: 1 set to failure",
+                        "Flexibility and deload stretching: 30 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Active recovery walk",
+                        "Foam rolling full body",
+                        "Contrast therapy (hot/cold)",
+                        "Review month 4 progress",
+                        "Set goals for month 5"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold tuck planche for 20+ seconds?",
+                "Can you do 3-5 tuck planche push-ups?",
+                "Can you do 12+ pull-ups?",
+                "Can you hold L-sit for 40+ seconds?"
+            ]
+        },
+        {
+            "month": 5,
+            "phase": "Advanced Tuck Planche",
+            "goals": [
+                "Transition to advanced tuck planche (knees extend back more)",
+                "Hold advanced tuck for 10+ seconds",
+                "Master full L-sit (45+ seconds)",
+                "Achieve 15+ pull-ups"
+            ],
+            "bonus_skills_to_work": ["Straddle Front Lever", "Free Handstand 10+ seconds"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Advanced Tuck Planche",
+                    "checklist": [
+                        "Warm-up: Full mobility routine (15 min)",
+                        "Advanced tuck planche: 6 sets of max hold (aim 8-12 seconds)",
+                        "Tuck planche: 3 sets of 25 seconds (consolidation)",
+                        "Advanced tuck planche leans: 4 sets of 20 seconds",
+                        "Planche push-ups (tuck): 5 sets of 5-8 reps",
+                        "One-arm planche lean: 3 sets of 10 seconds each arm",
+                        "Scapular strength circuit: 3 rounds"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength Max",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted pull-ups (moderate): 5 sets of 8 reps",
+                        "Archer pull-ups: 4 sets of 6 each side",
+                        "Straddle front lever: 5 sets of 10-15 seconds",
+                        "Front lever pulls (advanced tuck): 4 sets of 5 reps",
+                        "Hefesto progression: 3 sets of 5 reps",
+                        "Hanging windshield wipers: 3 sets of 10 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core Elite",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Full L-sit: 5 sets of 45+ seconds",
+                        "V-sit attempts: 4 sets of 15-20 seconds",
+                        "Manna leans: 4 sets of 25 seconds",
+                        "Dragon flags (full): 4 sets of 8 reps",
+                        "Hollow body to tuck planche: 3 sets of 5 transitions",
+                        "Compression circuit: 20 minutes",
+                        "Handstand variations: 5 sets of 60 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Dynamic Push",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Handstand push-ups (free or wall): 5 sets of 10 reps",
+                        "Planche push-ups (adv tuck negatives): 4 sets of 5 reps",
+                        "Pseudo planche explosive push-ups: 4 sets of 8 reps",
+                        "Ring push-ups (turned out): 4 sets of 12 reps",
+                        "Maltese leans (light): 3 sets of 15 seconds",
+                        "Dips variations circuit: 3 rounds"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Skill",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-up pyramid: 1-2-3-4-5-4-3-2-1 reps",
+                        "One-arm pull-up progression: 4 sets each side",
+                        "Muscle-up practice: 5 sets of 3-5 reps",
+                        "Back lever progressions: 4 sets",
+                        "German hang to inverted hang: 3 sets of 5 transitions",
+                        "Mobility and prehab: 25 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Mastery Day",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Advanced tuck planche practice: 8 sets of max hold",
+                        "Handstand free-standing: 10 sets of attempts (aim 10+ sec)",
+                        "L-sit to handstand press attempts: 5 sets",
+                        "Front lever progressions: 5 sets",
+                        "Skill flow: 30 minutes (combine all skills)",
+                        "Deep flexibility work: 30 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest",
+                        "Sauna or massage (if available)",
+                        "Gentle stretching",
+                        "Mental training: visualization",
+                        "Nutrition optimization review"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold advanced tuck planche for 10+ seconds?",
+                "Can you hold full L-sit for 45+ seconds?",
+                "Can you do 15+ pull-ups?",
+                "Can you hold straddle front lever for 10+ seconds?"
+            ]
+        },
+        {
+            "month": 6,
+            "phase": "Advanced Tuck Mastery & Straddle Introduction",
+            "goals": [
+                "Hold advanced tuck planche for 20+ seconds",
+                "Begin straddle planche attempts (5+ seconds)",
+                "Perform 10+ tuck planche push-ups",
+                "Master handstand (30+ seconds free)"
+            ],
+            "bonus_skills_to_work": ["Full Front Lever", "Handstand Push-up (free standing)"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Straddle Planche Introduction",
+                    "checklist": [
+                        "Warm-up: Extensive prep (15 min)",
+                        "Straddle planche attempts: 6 sets of max hold (aim 3-5 seconds)",
+                        "Advanced tuck planche: 4 sets of 20 seconds",
+                        "Straddle planche leans: 5 sets of 20 seconds",
+                        "Single-leg assisted straddle: 4 sets of 10 seconds each",
+                        "Planche push-ups (advanced tuck): 5 sets of 8 reps",
+                        "Wrist conditioning: 10 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Maximum Pull Strength",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted pull-ups (heavy): 5 sets of 5 reps",
+                        "Explosive pull-ups to chest: 4 sets of 5 reps",
+                        "Full front lever: 5 sets of 10-15 seconds",
+                        "Front lever rows: 4 sets of 6 reps",
+                        "One-arm pull-up progressions: 4 sets each side",
+                        "Core: Ab wheel rollouts: 4 sets of 12 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Compression & Flexibility",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "V-sit: 5 sets of 20-25 seconds",
+                        "Manna progressions: 5 sets of 30 seconds",
+                        "Pike compression pulses: 5 sets of 50 reps",
+                        "Pancake stretch: 5 sets of 90 seconds",
+                        "Middle split work: 20 minutes",
+                        "Handstand press negatives: 4 sets of 5 reps",
+                        "Active flexibility circuit: 25 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Power & Dynamics",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Handstand push-ups (deficit): 5 sets of 8 reps",
+                        "Plyo push-ups: 4 sets of 10 reps",
+                        "Straddle planche negatives: 5 sets of 5 seconds descent",
+                        "Pseudo planche to handstand: 3 sets of 5 reps",
+                        "Ring muscle-ups: 4 sets of 5 reps",
+                        "Ring turned-out support: 4 sets of 45 seconds"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Volume",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 100 total reps (any sets needed)",
+                        "Typewriter pull-ups: 4 sets of 8 total",
+                        "Ice cream makers: 3 sets of 5 reps",
+                        "Back lever: 4 sets of 20 seconds",
+                        "Shoulder extension work: 4 sets",
+                        "Full body mobility: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skills Integration & Testing",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Straddle planche max attempt: 3 tries",
+                        "Advanced tuck planche max: 1 attempt",
+                        "Handstand free-standing: work to 30+ seconds",
+                        "Full front lever: test max hold",
+                        "Skill combinations: 30 minutes freestyle",
+                        "Recovery stretching: 30 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest day",
+                        "Ice bath or cold therapy",
+                        "Massage or self-myofascial release",
+                        "Mental recovery and visualization",
+                        "Review 6-month progress, take videos"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold advanced tuck planche for 20+ seconds?",
+                "Can you hold straddle planche for 5+ seconds?",
+                "Can you do 10+ tuck planche push-ups?",
+                "Can you hold handstand free for 30+ seconds?"
+            ]
+        },
+        {
+            "month": 7,
+            "phase": "Straddle Planche Development",
+            "goals": [
+                "Hold straddle planche for 10+ seconds",
+                "Perform straddle planche push-up negatives",
+                "Maintain all previous skills",
+                "Build 18+ pull-ups"
+            ],
+            "bonus_skills_to_work": ["Victorian on rings (lean)", "Handstand press to handstand"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Straddle Planche Focus",
+                    "checklist": [
+                        "Warm-up: Comprehensive (15 min)",
+                        "Straddle planche: 7 sets of max hold (aim 8-12 seconds)",
+                        "Straddle planche leans: 5 sets of 25 seconds",
+                        "Single-leg to straddle transitions: 4 sets of 5 transitions",
+                        "Advanced tuck planche: 3 sets of 25 seconds (maintenance)",
+                        "Straddle planche push-up negatives: 4 sets of 5 reps",
+                        "Protraction strength work: 4 sets of 40 seconds"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength Maintenance",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted pull-ups: 5 sets of 10 reps",
+                        "Wide grip pull-ups: 4 sets of 12 reps",
+                        "Full front lever: 5 sets of 20 seconds",
+                        "Front lever touch pulls: 4 sets of 5 reps",
+                        "Victorian leans on rings: 3 sets of 15 seconds",
+                        "Hanging leg raises (straight): 4 sets of 15 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Active Recovery & Mobility",
+                    "checklist": [
+                        "Warm-up: Light (10 min)",
+                        "Handstand walking practice: 15 minutes",
+                        "L-sit variations: 5 sets of 45 seconds",
+                        "Flow training: 20 minutes",
+                        "Full splits work: 20 minutes",
+                        "Shoulder mobility: 15 minutes",
+                        "Thoracic mobility: 15 minutes",
+                        "Full body stretch: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Variations",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Handstand push-ups (free): 5 sets of 6-8 reps",
+                        "Ring dips (deep): 5 sets of 15 reps",
+                        "Straddle planche on parallettes: 5 sets of 8-10 seconds",
+                        "Maltese progressions: 4 sets of 20 seconds",
+                        "Pseudo planche push-ups (max lean): 4 sets of 12 reps",
+                        "Push-up variations circuit: 3 rounds"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Power & Dynamics",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Explosive muscle-ups: 5 sets of 5 reps",
+                        "One-arm pull-up work: 5 sets each side",
+                        "Typewriter pull-ups slow: 4 sets of 6 total",
+                        "Back lever: 4 sets of 30 seconds",
+                        "Ice cream makers: 4 sets of 6 reps",
+                        "Mobility and cooldown: 20 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Refinement",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Straddle planche quality work: 8 sets of max hold",
+                        "Handstand press (straddle): 5 sets of attempts",
+                        "Front lever combinations: 5 sets",
+                        "Planche to handstand transitions: 3 sets of 3 reps",
+                        "Endurance: 200 push-ups total",
+                        "Flexibility session: 40 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest day",
+                        "Passive stretching",
+                        "Review technique videos",
+                        "Mental visualization practice",
+                        "Nutrition and hydration focus"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold straddle planche for 10+ seconds?",
+                "Can you do straddle planche push-up negatives?",
+                "Can you do 18+ pull-ups?",
+                "Can you press to handstand (assisted)?"
+            ]
+        },
+        {
+            "month": 8,
+            "phase": "Straddle Planche Consolidation",
+            "goals": [
+                "Hold straddle planche for 15+ seconds",
+                "Perform 3-5 straddle planche push-ups",
+                "Begin one-leg planche attempts",
+                "Maintain 20+ pull-ups"
+            ],
+            "bonus_skills_to_work": ["Planche to Handstand", "One Arm Handstand (with support)"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Straddle Planche Strength",
+                    "checklist": [
+                        "Warm-up: Extended prep (15 min)",
+                        "Straddle planche: 6 sets of 15+ seconds",
+                        "Straddle planche push-ups: 5 sets of 3-5 reps",
+                        "One-leg planche attempts: 5 sets of max hold each leg",
+                        "Straddle planche to tuck transitions: 4 sets of 5",
+                        "Advanced straddle leans: 4 sets of 30 seconds",
+                        "Scapular conditioning: 15 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Excellence",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted pull-ups (heavy): 5 sets of 6 reps",
+                        "Archer pull-ups (slow): 4 sets of 8 each side",
+                        "Front lever: 5 sets of 25 seconds",
+                        "Front lever pull-ups: 4 sets of 5 reps",
+                        "Hefesto training: 4 sets",
+                        "Core: Full dragon flags: 4 sets of 10 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skill & Flexibility",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Handstand variations: 30 minutes",
+                        "Press to handstand (straddle): 5 sets of 5 attempts",
+                        "V-sit: 5 sets of 30 seconds",
+                        "Manna progressions: 5 sets of 40 seconds",
+                        "Active flexibility: 30 minutes",
+                        "Oversplits training: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Dynamic Push",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Planche push-ups (straddle): 6 sets to failure",
+                        "Explosive handstand push-ups: 4 sets of 8 reps",
+                        "Ring work: 5 sets of 45 second holds (various positions)",
+                        "Maltese leans: 4 sets of 25 seconds",
+                        "Planche to handstand attempts: 4 sets of 3 reps",
+                        "Dips circuit: 100 total reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Volume & Endurance",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-ups: 150 total reps (break as needed)",
+                        "One-arm negatives: 4 sets of 5 reps each side",
+                        "Muscle-up variations: 5 sets of 8 reps",
+                        "Back lever: 5 sets of 35 seconds",
+                        "Victorian attempts: 4 sets",
+                        "Full mobility routine: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Integration & Testing",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Straddle planche max hold test: 2 attempts",
+                        "One-leg planche: test both legs",
+                        "Skill flow: 40 minutes (freestyle all skills)",
+                        "Handstand press work: 20 minutes",
+                        "Pull-up max test: 1 set to failure",
+                        "Recovery work: 40 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest",
+                        "Cold therapy and heat therapy",
+                        "Deep tissue work",
+                        "Progress documentation with video",
+                        "Plan next training phase"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold straddle planche for 15+ seconds?",
+                "Can you do 3-5 straddle planche push-ups?",
+                "Can you hold one-leg planche for 5+ seconds?",
+                "Can you do 20+ pull-ups?"
+            ]
+        },
+        {
+            "month": 9,
+            "phase": "One-Leg Planche & Full Planche Introduction",
+            "goals": [
+                "Master straddle planche (20+ seconds)",
+                "Hold one-leg planche for 10+ seconds",
+                "Begin full planche attempts (3+ seconds)",
+                "All previous skills maintained"
+            ],
+            "bonus_skills_to_work": ["Iron Cross progressions", "90-degree push-ups"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Full Planche Introduction",
+                    "checklist": [
+                        "Warm-up: Comprehensive (15 min)",
+                        "Full planche attempts: 6 sets of max hold (aim 3-5 seconds)",
+                        "One-leg planche: 5 sets of 10 seconds each leg",
+                        "Straddle planche: 4 sets of 20 seconds (maintenance)",
+                        "Full planche leans: 5 sets of 20 seconds",
+                        "Straddle to full planche attempts: 4 sets of 5 transitions",
+                        "Intense scapular work: 15 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Maximum Pulling",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Weighted pull-ups (max weight): 5 sets of 5 reps",
+                        "One-arm pull-up attempts: 5 sets each side",
+                        "Front lever: 5 sets of 30 seconds",
+                        "Victorian on rings: 4 sets of 20 seconds",
+                        "Iron Cross leans: 4 sets of 15 seconds",
+                        "Core strength circuit: 20 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Recovery & Mobility",
+                    "checklist": [
+                        "Warm-up: Light (10 min)",
+                        "Active recovery flow: 30 minutes",
+                        "Handstand work: 20 minutes",
+                        "Compression training: 20 minutes",
+                        "Full splits maintenance: 15 minutes each",
+                        "Shoulder health: 20 minutes",
+                        "Deep stretching: 30 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Power Specialist",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "90-degree push-ups: 5 sets of 5-8 reps",
+                        "Ring dips (RTO): 5 sets of 12 reps",
+                        "Straddle planche push-ups: 5 sets of 8 reps",
+                        "Handstand push-ups (deficit free): 4 sets of 8 reps",
+                        "Maltese progressions: 5 sets of 30 seconds",
+                        "Planche variations circuit: 20 minutes"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Mastery",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-up variations pyramid: 30 minutes",
+                        "Muscle-up variations: 5 sets of 10 reps",
+                        "Hefesto: 4 sets of 3 reps",
+                        "Back lever to front lever: 3 sets of 5 transitions",
+                        "Ice cream maker variations: 4 sets of 8 reps",
+                        "Flexibility work: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skills & Testing",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Full planche attempts: 8 sets of max hold",
+                        "One-leg planche max: test each leg",
+                        "Straddle planche max: 1 test",
+                        "Handstand press to full planche attempts: 5 sets",
+                        "Freestyle skill session: 45 minutes",
+                        "Long recovery stretch: 45 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest day",
+                        "Ice bath",
+                        "Professional massage if possible",
+                        "Visualization training",
+                        "Assess 9-month progress"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold straddle planche for 20+ seconds?",
+                "Can you hold one-leg planche for 10+ seconds?",
+                "Can you hold full planche for 3-5 seconds?",
+                "Can you do one-arm pull-up (assisted or full)?"
+            ]
+        },
+        {
+            "month": 10,
+            "phase": "Full Planche Development",
+            "goals": [
+                "Hold full planche for 8+ seconds",
+                "Perform full planche negatives",
+                "Master one-leg planche (15+ seconds)",
+                "Maintain all pulling strength"
+            ],
+            "bonus_skills_to_work": ["Planche variations on rings", "Zanetti press"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Full Planche Power",
+                    "checklist": [
+                        "Warm-up: Extended (15 min)",
+                        "Full planche: 7 sets of max hold (aim 6-10 seconds)",
+                        "Full planche leans: 5 sets of 25 seconds",
+                        "One-leg to full transitions: 4 sets of 5 transitions each side",
+                        "Full planche push-up negatives: 5 sets of 5 reps",
+                        "Straddle planche: 3 sets of 25 seconds (maintenance)",
+                        "Wrist and forearm conditioning: 15 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength Peak",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-ups: 5 sets of 3-5 reps each side",
+                        "Weighted pull-ups (heavy): 5 sets of 8 reps",
+                        "Front lever: 5 sets of 35 seconds",
+                        "Victorian: 5 sets of 25 seconds",
+                        "Iron Cross training: 5 sets",
+                        "Full body tension work: 20 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skill Refinement",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Handstand press variations: 30 minutes",
+                        "Planche on rings attempts: 5 sets",
+                        "Press to planche: 5 sets of attempts",
+                        "Manna work: 5 sets of 45 seconds",
+                        "Active flexibility circuit: 30 minutes",
+                        "Balance and control drills: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Dynamic Pushing",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Full planche push-up attempts: 5 sets",
+                        "Zanetti press progressions: 4 sets",
+                        "Ring muscle-ups to support: 5 sets of 8 reps",
+                        "Maltese to planche: 4 sets of 3 transitions",
+                        "90-degree push-ups: 5 sets of 10 reps",
+                        "Push endurance circuit: 20 minutes"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Variations",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Pull-up max effort: various grips, 200 total reps",
+                        "Explosive muscle-ups: 5 sets of 8 reps",
+                        "Back lever variations: 5 sets of 40 seconds",
+                        "Hefesto: 5 sets of 5 reps",
+                        "One-arm hang: 4 sets of 45 seconds each",
+                        "Mobility cooldown: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Testing & Integration",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Full planche max hold: 3 attempts",
+                        "All planche variations: test each for max hold",
+                        "Skill combinations: 45 minutes freestyle",
+                        "Endurance challenge: design your own",
+                        "Quality assessment: video analysis",
+                        "Deep recovery work: 45 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest",
+                        "Contrast therapy",
+                        "Soft tissue work",
+                        "Mental preparation for final phase",
+                        "Review 10-month progress"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold full planche for 8+ seconds?",
+                "Can you do full planche negatives?",
+                "Can you hold one-leg planche for 15+ seconds?",
+                "Can you do one-arm pull-up?"
+            ]
+        },
+        {
+            "month": 11,
+            "phase": "Full Planche Consolidation",
+            "goals": [
+                "Hold full planche for 12+ seconds",
+                "Perform 3+ full planche push-ups",
+                "Begin advanced planche variations",
+                "Peak physical conditioning"
+            ],
+            "bonus_skills_to_work": ["Planche on rings", "Impossible dips"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Full Planche Excellence",
+                    "checklist": [
+                        "Warm-up: Comprehensive (15 min)",
+                        "Full planche: 6 sets of 12+ seconds",
+                        "Full planche push-ups: 5 sets of 3-5 reps",
+                        "Planche on rings: 5 sets of max hold",
+                        "Full planche to handstand: 3 sets of 3 transitions",
+                        "Maltese progressions: 5 sets of 35 seconds",
+                        "Straight arm strength circuit: 20 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Elite Pull Strength",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-ups: 5 sets of 5+ reps each",
+                        "Weighted pull-ups (very heavy): 5 sets of 5 reps",
+                        "Iron Cross on rings: 5 sets of max hold",
+                        "Victorian: 5 sets of 30 seconds",
+                        "Front lever variations: 5 sets each",
+                        "Advanced core: 25 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Active Recovery & Mobility",
+                    "checklist": [
+                        "Warm-up: Light (10 min)",
+                        "Flow state training: 40 minutes",
+                        "Handstand variations: 30 minutes",
+                        "Compression and flexibility: 30 minutes",
+                        "Joint health and prehab: 20 minutes",
+                        "Soft tissue maintenance: 20 minutes",
+                        "Meditation and visualization: 15 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Specialist Day",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Impossible dips: 5 sets of max reps",
+                        "Ring dips (full RTO): 5 sets of 15 reps",
+                        "Zanetti press: 4 sets of 3 reps",
+                        "Full planche on parallettes: 5 sets of 10+ seconds",
+                        "Handstand push-up variations: 5 sets of 10 reps",
+                        "Push endurance test: 300 push-ups"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Mastery & Skills",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-up max: test each side",
+                        "Typewriter pull-ups: 5 sets of 12 total",
+                        "Muscle-up variations: freestyle 30 minutes",
+                        "Hefesto variations: 5 sets",
+                        "Back lever to impossible: 4 sets",
+                        "Full mobility session: 35 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Peak Performance Day",
+                    "checklist": [
+                        "Warm-up: Perfect prep (15 min)",
+                        "Full planche max hold: 2 attempts for record",
+                        "All advanced variations: quality testing",
+                        "Skill showcase: 60 minutes (film all skills)",
+                        "Strength assessment: all exercises",
+                        "Flexibility assessment: document progress",
+                        "Long recovery session: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest",
+                        "Professional treatment if available",
+                        "Progress review and documentation",
+                        "Mental preparation for final months",
+                        "Goal refinement for months 12-15"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold full planche for 12+ seconds?",
+                "Can you do 3+ full planche push-ups?",
+                "Can you hold planche on rings?",
+                "Is your form on all skills excellent?"
+            ]
+        },
+        {
+            "month": 12,
+            "phase": "Full Planche Mastery",
+            "goals": [
+                "Hold full planche for 15+ seconds with perfect form",
+                "Perform 5+ full planche push-ups",
+                "Master planche on rings (8+ seconds)",
+                "All bonus skills at high level"
+            ],
+            "bonus_skills_to_work": ["Planche press to handstand", "Full Iron Cross"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Perfection",
+                    "checklist": [
+                        "Warm-up: Optimal prep (15 min)",
+                        "Full planche perfect form: 6 sets of 15+ seconds",
+                        "Full planche push-ups: 5 sets of 5-7 reps",
+                        "Planche press to handstand: 5 sets of attempts",
+                        "Ring planche: 5 sets of 10+ seconds",
+                        "All planche variations for quality: 20 minutes",
+                        "Straight arm conditioning: 20 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength Peak",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-ups: 5 sets of 8+ reps each",
+                        "Iron Cross: 5 sets of 10+ seconds",
+                        "Victorian: 5 sets of 35 seconds",
+                        "All front lever variations: 5 sets each",
+                        "Weighted pull-ups: 5 sets of 10 reps (heavy)",
+                        "Advanced core complex: 25 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skill Integration",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Freestyle skill session: 60 minutes",
+                        "Combination flows: 30 minutes",
+                        "Quality refinement all skills: 30 minutes",
+                        "Advanced flexibility: 30 minutes",
+                        "Balance and control: 20 minutes",
+                        "Recovery stretching: 30 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Excellence",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Ring training complex: 45 minutes",
+                        "All push-up variations: excellence focus",
+                        "Impossible dips: 5 sets of 10+ reps",
+                        "90-degree variations: 5 sets",
+                        "Handstand push-up mastery: 5 sets of 15 reps",
+                        "Push endurance: 400 total reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Dynamic Work",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Explosive variations: 30 minutes",
+                        "All muscle-up types: 5 sets of 10 reps each",
+                        "One-arm negatives (very slow): 5 sets each",
+                        "Hefesto mastery: 5 sets of 8 reps",
+                        "Dynamic combinations: 30 minutes",
+                        "Full mobility: 40 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Showcase & Assessment",
+                    "checklist": [
+                        "Warm-up: Perfect (15 min)",
+                        "Full planche max hold: ultimate test",
+                        "Video documentation: all major skills",
+                        "Strength testing: all metrics",
+                        "Skill showcase: freestyle 60 minutes",
+                        "Progress photos and measurements",
+                        "Celebration and recovery: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest",
+                        "Review 12-month journey",
+                        "Document all achievements",
+                        "Set goals for months 13-15",
+                        "Mental preparation for final push"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold full planche for 15+ seconds with perfect form?",
+                "Can you do 5+ full planche push-ups?",
+                "Can you hold planche on rings for 8+ seconds?",
+                "Have you mastered all progressions?"
+            ]
+        },
+        {
+            "month": 13,
+            "phase": "Advanced Variations & Endurance",
+            "goals": [
+                "Hold full planche for 20+ seconds",
+                "Perform 8+ full planche push-ups",
+                "Master all planche variations",
+                "Peak overall conditioning"
+            ],
+            "bonus_skills_to_work": ["Maltese", "Planche on single bar"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Endurance",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Full planche: 5 sets of 20+ seconds",
+                        "Full planche push-ups: 5 sets of 8-10 reps",
+                        "Maltese leans: 5 sets of 40 seconds",
+                        "Ring planche variations: 6 sets",
+                        "Planche on single bar: 5 sets",
+                        "Total planche volume: aim for 120+ seconds cumulative"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Elite Pulling",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-ups: 5 sets of 10 reps each",
+                        "Iron Cross: 5 sets of 15 seconds",
+                        "Victorian variations: 5 sets of 40 seconds",
+                        "All lever variations mastery: 30 minutes",
+                        "Weighted pull-ups: 5 sets of 12 reps (heavy)",
+                        "Core elite complex: 30 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skills & Flow",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Create skill combinations: 60 minutes",
+                        "Planche to handstand to press: 5 sets",
+                        "Advanced transitions: 30 minutes",
+                        "Quality refinement: 30 minutes",
+                        "Flexibility mastery: 40 minutes",
+                        "Balance work: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Volume",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Ring strength complex: 60 minutes",
+                        "All dip variations: excellence",
+                        "Handstand push-up endurance: 100 total reps",
+                        "Planche push-up variations: 50 total reps",
+                        "Impossible variations: 5 sets",
+                        "Push endurance test: 500 total push-ups"
+                    ]
+                },
+                "friday": {
+                    "focus": "Dynamic Excellence",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Explosive complex: 40 minutes",
+                        "All muscle-up variations: mastery",
+                        "One-arm work: 5 sets each side (all variations)",
+                        "Dynamic combinations: 40 minutes",
+                        "Power endurance: custom circuit",
+                        "Flexibility: 40 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Peak Testing",
+                    "checklist": [
+                        "Warm-up: Perfect (15 min)",
+                        "Full planche max hold: push for 20+ seconds",
+                        "All variations testing: maximum effort",
+                        "Strength assessment: all lifts",
+                        "Skill combinations showcase: 60 minutes",
+                        "Document all progress: photos and videos",
+                        "Recovery session: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Recovery",
+                    "checklist": [
+                        "Complete rest",
+                        "Professional recovery treatments",
+                        "Progress analysis",
+                        "Mental preparation",
+                        "Goal setting for final 2 months"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold full planche for 20+ seconds?",
+                "Can you do 8+ full planche push-ups?",
+                "Have you mastered all variations?",
+                "Is your form absolutely perfect?"
+            ]
+        },
+        {
+            "month": 14,
+            "phase": "Mastery & Refinement",
+            "goals": [
+                "Hold full planche for 25+ seconds",
+                "Perform 10+ full planche push-ups",
+                "Master advanced ring work",
+                "Peak performance in all areas"
+            ],
+            "bonus_skills_to_work": ["Create your own combinations", "Teach others"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Mastery",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Full planche quality: 5 sets of 25+ seconds",
+                        "Full planche push-ups: 5 sets of 10+ reps",
+                        "All variations mastery: 40 minutes",
+                        "Ring planche excellence: 6 sets of 15+ seconds",
+                        "Create new progressions: experiment 20 minutes",
+                        "Total planche time: 150+ seconds cumulative"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Mastery",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-ups: 5 sets of 12+ reps each",
+                        "Iron Cross: 5 sets of 20 seconds",
+                        "All pull variations: mastery level",
+                        "Create pull combinations: 30 minutes",
+                        "Volume work: 250+ total pull-ups",
+                        "Core mastery: 30 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Creative Flow",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Design your own routines: 60 minutes",
+                        "Teach progressions (video/document): 30 minutes",
+                        "Experiment with new movements: 30 minutes",
+                        "Advanced flexibility training: 40 minutes",
+                        "Balance and control mastery: 20 minutes",
+                        "Recovery and reflection: 30 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Mastery",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Ring mastery session: 60 minutes",
+                        "All push variations: perfect form focus",
+                        "Handstand push-up excellence: 5 sets of 20 reps",
+                        "Create push combinations: 30 minutes",
+                        "Endurance: 600 total push-ups",
+                        "Quality assessment and filming"
+                    ]
+                },
+                "friday": {
+                    "focus": "Complete Athlete",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Full body strength complex: 60 minutes",
+                        "All skills integration: 40 minutes",
+                        "Dynamic work: 30 minutes",
+                        "Conditioning work: 30 minutes",
+                        "Flexibility mastery: 40 minutes",
+                        "Recovery protocols: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Performance Day",
+                    "checklist": [
+                        "Warm-up: Perfect (15 min)",
+                        "Full planche max: aim for 25+ seconds",
+                        "All skills showcase: 60 minutes",
+                        "Create performance routine: 30 minutes",
+                        "Document everything: comprehensive filming",
+                        "Celebrate achievements",
+                        "Deep recovery: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest & Reflection",
+                    "checklist": [
+                        "Complete rest",
+                        "Review entire journey",
+                        "Document final month goals",
+                        "Mental preparation for completion",
+                        "Celebrate progress"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold full planche for 25+ seconds?",
+                "Can you do 10+ full planche push-ups?",
+                "Have you mastered all skills?",
+                "Are you ready for month 15 finale?"
+            ]
+        },
+        {
+            "month": 15,
+            "phase": "Ultimate Achievement & Beyond",
+            "goals": [
+                "Hold full planche for 30+ seconds",
+                "Perform 12+ full planche push-ups",
+                "Master all advanced variations",
+                "Plan future training goals"
+            ],
+            "bonus_skills_to_work": ["Maltese on rings", "Your choice advanced skill"],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Excellence",
+                    "checklist": [
+                        "Warm-up: (15 min)",
+                        "Full planche: work toward 30+ seconds",
+                        "Full planche push-ups: 5 sets of 12+ reps",
+                        "All variations perfection: 45 minutes",
+                        "Ring planche mastery: 5 sets of 20+ seconds",
+                        "Maltese progressions: 6 sets",
+                        "Document final planche achievements"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Excellence",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "One-arm pull-ups: 5 sets of 15 reps each",
+                        "Iron Cross: 5 sets of 25+ seconds",
+                        "All pull skills mastery: 45 minutes",
+                        "Volume work: 300 total pull-ups",
+                        "Document pull strength achievements",
+                        "Core elite work: 30 minutes"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skills Showcase Prep",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Create final showcase routine: 60 minutes",
+                        "Perfect all transitions: 40 minutes",
+                        "Quality check every skill: 40 minutes",
+                        "Flexibility display: 30 minutes",
+                        "Film comprehensive showcase",
+                        "Recovery: 40 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Showcase",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "All push skills perfection: 60 minutes",
+                        "Ring work showcase: 30 minutes",
+                        "Endurance display: 700+ push-ups",
+                        "Document all push achievements",
+                        "Create push skill showcase routine",
+                        "Quality assessment"
+                    ]
+                },
+                "friday": {
+                    "focus": "Integration Day",
+                    "checklist": [
+                        "Warm-up: (10 min)",
+                        "Full body skill flow: 90 minutes",
+                        "All skills in combination: 40 minutes",
+                        "Freestyle session: 30 minutes",
+                        "Strength showcase: all metrics",
+                        "Final flexibility display: 40 minutes",
+                        "Document complete skillset"
+                    ]
+                },
+                "saturday": {
+                    "focus": "FINAL ACHIEVEMENT DAY",
+                    "checklist": [
+                        "Warm-up: Perfect preparation (15 min)",
+                        "Full planche FINAL TEST: aim for 30+ seconds",
+                        "Full planche push-ups FINAL TEST: maximum reps",
+                        "Complete skills showcase: comprehensive filming",
+                        "Document ALL achievements: photos, videos, measurements",
+                        "Celebrate 15-month journey completion!",
+                        "Long celebration recovery: 90 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Completion & Future",
+                    "checklist": [
+                        "Rest and reflect on entire journey",
+                        "Review all progress documentation",
+                        "Celebrate your achievement - YOU DID IT!",
+                        "Plan future training goals",
+                        "Consider what advanced skills to pursue next",
+                        "Thank yourself for 15 months of dedication",
+                        "Share your journey to inspire others"
+                    ]
+                }
+            },
+            "milestone_check": [
+                "Can you hold full planche for 30+ seconds?",
+                "Can you do 12+ full planche push-ups?",
+                "Have you mastered ALL skills?",
+                "Are you ready to teach others?",
+                "CONGRATULATIONS - YOU ACHIEVED THE FULL PLANCHE!"
+            ]
+        }
+    ],
+    "nutrition_guidelines": {
+        "daily_protein": "1.6-2.2g per kg bodyweight",
+        "hydration": "3-4 liters of water daily",
+        "calories": "Slight surplus if building, maintenance for skill work",
+        "supplements": "Optional: Creatine, Omega-3, Vitamin D, Magnesium",
+        "timing": "Eat protein within 2 hours post-workout"
+    },
+    "recovery_protocols": {
+        "sleep": "7-9 hours minimum per night",
+        "rest_days": "1 complete rest day per week (Sunday)",
+        "deload_weeks": "Every 6-8 weeks, reduce volume by 40-50%",
+        "injury_prevention": "Never train through pain, only through fatigue",
+        "active_recovery": "Walking, swimming, yoga on rest days"
+    },
+    "progress_tracking": {
+        "weekly": "Take notes on hold times and reps achieved",
+        "monthly": "Take photos and videos from same angles",
+        "quarterly": "Full assessment of all metrics",
+        "measurements": "Track bodyweight, max holds, max reps"
+    },
+    "mental_preparation": {
+        "visualization": "Practice mental imagery of perfect planche daily",
+        "patience": "Trust the process, progress is not linear",
+        "consistency": "Missing one day is OK, missing three is not",
+        "form_over_ego": "Perfect form is more important than hold time",
+        "celebrate_small_wins": "Every progression milestone matters"
+    },
+    "safety_notes": {
+        "warning_signs": [
+            "Sharp pain in joints (STOP immediately)",
+            "Persistent wrist pain (reduce volume, add rehab)",
+            "Shoulder impingement (check form, see professional)",
+            "Elbow tendonitis (rest and rehab required)"
+        ],
+        "injury_protocol": "If injured, rest 1-2 weeks minimum and see a physiotherapist",
+        "form_priorities": [
+            "Shoulders protracted (pushed forward)",
+            "Body completely straight and horizontal",
+            "Hands under shoulders or slightly forward",
+            "Full body tension maintained",
+            "Breathing controlled and steady"
+        ]
+    },
+    "bonus_skills_learned_in_journey": [
+        "Crow Pose",
+        "Frog Stand",
+        "Handstand (wall and free)",
+        "L-sit (all variations)",
+        "Front Lever (all progressions)",
+        "Tuck Front Lever",
+        "Straddle Front Lever",
+        "Full Front Lever",
+        "Back Lever",
+        "Handstand Push-ups",
+        "Muscle-ups (various types)",
+        "One-arm Pull-up progressions",
+        "Victorian",
+        "Iron Cross progressions",
+        "Maltese progressions",
+        "Press to Handstand",
+        "90-degree Push-ups",
+        "Impossible Dips",
+        "Hefesto",
+        "V-sit",
+        "Manna progressions"
+    ],
+    "final_message": "This 15-month journey will transform you into an elite calisthenics athlete. The full planche is not just about strength—it's about dedication, patience, and trusting the process. There will be hard days, plateaus, and moments of doubt. Push through them. Your 27-year-old body is MORE than capable. Stay consistent, listen to your body, and celebrate every milestone. In 15 months, you'll look back at this moment and be amazed at what you've achieved. Now go get that planche! 💪"
+}
