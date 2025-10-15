@@ -39,12 +39,12 @@ export default async function VideoDocumentPage({ params }: PageProps) {
               Last updated: {new Date(document.updatedAt).toLocaleDateString()}
             </p>
           </div>
-          <AddVideoDialog docId={id} />
+          <AddVideoDialog docId={id} categories={document.categories} />
         </div>
 
         <Separator className="mb-6" />
 
-        <VideoLinkList docId={id} links={document.links} otherDocuments={otherDocuments} />
+        <VideoLinkList docId={id} links={document.links} otherDocuments={otherDocuments} categories={document.categories} />
       </div>
     </div>
   )

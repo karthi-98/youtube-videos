@@ -1,7 +1,7 @@
 'use server'
 
 import { db } from '@/firebase/config'
-import { collection, getDocs, doc, getDoc, updateDoc, arrayUnion, Timestamp } from 'firebase/firestore'
+import { collection, getDocs, doc, getDoc, updateDoc, arrayUnion, arrayRemove, Timestamp } from 'firebase/firestore'
 import { revalidatePath } from 'next/cache'
 import type { VideoDocument, YouTubeLink } from '@/types'
 
@@ -15,6 +15,7 @@ export async function getVideoDocuments() {
         name: data.name || doc.id,
         createdAt: (data.createdAt?.toDate() || new Date()).toISOString(),
         updatedAt: (data.updatedAt?.toDate() || new Date()).toISOString(),
+        categories: data.categories || [],
       }
     })
 
@@ -41,6 +42,7 @@ export async function getVideoDocumentById(docId: string) {
       title: link.title,
       addedAt: (link.addedAt?.toDate() || new Date()).toISOString(),
       watched: link.watched || false,
+      category: link.category,
     }))
 
     const document = {
@@ -48,6 +50,7 @@ export async function getVideoDocumentById(docId: string) {
       name: data.name || docSnap.id,
       createdAt: (data.createdAt?.toDate() || new Date()).toISOString(),
       updatedAt: (data.updatedAt?.toDate() || new Date()).toISOString(),
+      categories: data.categories || [],
       links,
     }
 
@@ -58,7 +61,7 @@ export async function getVideoDocumentById(docId: string) {
   }
 }
 
-export async function addYouTubeLink(docId: string, url: string, title: string) {
+export async function addYouTubeLink(docId: string, url: string, title: string, category?: string) {
   try {
     const docRef = doc(db, 'youtube', docId)
 
@@ -68,6 +71,7 @@ export async function addYouTubeLink(docId: string, url: string, title: string) 
       title,
       addedAt: Timestamp.now(),
       watched: false,
+      category: category || undefined,
     }
 
     await updateDoc(docRef, {
@@ -161,5 +165,94 @@ export async function moveYouTubeLink(fromDocId: string, toDocId: string, linkId
   } catch (error) {
     console.error('Error moving YouTube link:', error)
     return { success: false, error: 'Failed to move YouTube link' }
+  }
+}
+
+export async function updateYouTubeLinkCategory(docId: string, linkId: string, category: string) {
+  try {
+    const docRef = doc(db, 'youtube', docId)
+    const docSnap = await getDoc(docRef)
+
+    if (!docSnap.exists()) {
+      return { success: false, error: 'Document not found' }
+    }
+
+    const data = docSnap.data()
+    const links = data.links || []
+    const updatedLinks = links.map((link: any) =>
+      link.id === linkId ? { ...link, category } : link
+    )
+
+    await updateDoc(docRef, {
+      links: updatedLinks,
+      updatedAt: Timestamp.now(),
+    })
+
+    revalidatePath(`/video/${docId}`)
+    return { success: true }
+  } catch (error) {
+    console.error('Error updating YouTube link category:', error)
+    return { success: false, error: 'Failed to update category' }
+  }
+}
+
+export async function addCategory(docId: string, categoryName: string) {
+  try {
+    const docRef = doc(db, 'youtube', docId)
+    const docSnap = await getDoc(docRef)
+
+    if (!docSnap.exists()) {
+      return { success: false, error: 'Document not found' }
+    }
+
+    const data = docSnap.data()
+    const categories = data.categories || []
+
+    // Check if category already exists
+    if (categories.includes(categoryName)) {
+      return { success: false, error: 'Category already exists' }
+    }
+
+    await updateDoc(docRef, {
+      categories: arrayUnion(categoryName),
+      updatedAt: Timestamp.now(),
+    })
+
+    revalidatePath(`/video/${docId}`)
+    return { success: true }
+  } catch (error) {
+    console.error('Error adding category:', error)
+    return { success: false, error: 'Failed to add category' }
+  }
+}
+
+export async function deleteCategory(docId: string, categoryName: string) {
+  try {
+    const docRef = doc(db, 'youtube', docId)
+    const docSnap = await getDoc(docRef)
+
+    if (!docSnap.exists()) {
+      return { success: false, error: 'Document not found' }
+    }
+
+    const data = docSnap.data()
+    const links = data.links || []
+
+    // Remove category from all links that have it
+    const updatedLinks = links.map((link: any) =>
+      link.category === categoryName ? { ...link, category: undefined } : link
+    )
+
+    await updateDoc(docRef, {
+      categories: arrayRemove(categoryName),
+      links: updatedLinks,
+      updatedAt: Timestamp.now(),
+    })
+
+    revalidatePath(`/video/${docId}`)
+    return { success: true }
+  } catch (error) {
+    console.error('Error deleting category:', error)
+    return { success: false, error: 'Failed to delete category' }
   }
 }

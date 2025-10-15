@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { YouTubeLink, VideoDocument } from '@/types'
-import { deleteYouTubeLink, moveYouTubeLink } from '@/actions/video-actions'
+import { deleteYouTubeLink, moveYouTubeLink, updateYouTubeLinkCategory } from '@/actions/video-actions'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { PlayIcon, MoreVerticalIcon, Trash2Icon, MoveIcon } from 'lucide-react'
+import { PlayIcon, MoreVerticalIcon, Trash2Icon, MoveIcon, TagIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { getYouTubeThumbnailFromUrl } from '@/lib/youtube'
 import gsap from 'gsap'
@@ -22,11 +22,13 @@ interface VideoLinkItemProps {
   docId: string
   link: YouTubeLink
   otherDocuments: VideoDocument[]
+  categories: string[]
 }
 
-export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProps) {
+export function VideoLinkItem({ docId, link, otherDocuments, categories }: VideoLinkItemProps) {
   const [isDeleting, setIsDeleting] = useState(false)
   const [isMoving, setIsMoving] = useState(false)
+  const [isUpdatingCategory, setIsUpdatingCategory] = useState(false)
   const thumbnailUrl = getYouTubeThumbnailFromUrl(link.url, 'maxres')
   const cardRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
@@ -74,6 +76,12 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
     setIsMoving(false)
   }
 
+  const handleCategoryChange = async (category: string) => {
+    setIsUpdatingCategory(true)
+    await updateYouTubeLinkCategory(docId, link.id, category)
+    setIsUpdatingCategory(false)
+  }
+
   return (
     <div
       ref={cardRef}
@@ -108,9 +116,42 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
                 <MoreVerticalIcon className="size-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="w-48">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuSeparator />
+
+              {categories.length > 0 && (
+                <>
+                  <DropdownMenuLabel className="text-xs text-muted-foreground font-normal">
+                    Category
+                  </DropdownMenuLabel>
+                  {categories.map((category) => (
+                    <DropdownMenuItem
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      disabled={isUpdatingCategory}
+                      className={cn(
+                        link.category === category && "bg-accent"
+                      )}
+                    >
+                      <TagIcon className="size-4" />
+                      {category}
+                    </DropdownMenuItem>
+                  ))}
+                  {link.category && (
+                    <DropdownMenuItem
+                      onClick={() => handleCategoryChange('')}
+                      disabled={isUpdatingCategory}
+                      className="text-muted-foreground"
+                    >
+                      <TagIcon className="size-4" />
+                      Remove Category
+                    </DropdownMenuItem>
+                  )}
+                  <DropdownMenuSeparator />
+                </>
+              )}
+
               {otherDocuments.length > 0 && (
                 <>
                   <DropdownMenuLabel className="text-xs text-muted-foreground font-normal">
@@ -129,6 +170,7 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
                   <DropdownMenuSeparator />
                 </>
               )}
+
               <DropdownMenuItem
                 onClick={handleDelete}
                 disabled={isDeleting}
@@ -147,6 +189,15 @@ export function VideoLinkItem({ docId, link, otherDocuments }: VideoLinkItemProp
         <h3 className="font-semibold text-base line-clamp-2 mb-2 min-h-[3rem]">
           {link.title}
         </h3>
+
+        {link.category && (
+          <div className="flex items-center gap-2 mb-3">
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium bg-primary/10 text-primary">
+              <TagIcon className="size-3" />
+              {link.category}
+            </span>
+          </div>
+        )}
 
         <p className="text-sm text-muted-foreground mb-4">
           Added: {new Date(link.addedAt).toLocaleDateString()}

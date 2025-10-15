@@ -12,17 +12,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { PlusIcon } from 'lucide-react'
+import { PlusIcon, TagIcon } from 'lucide-react'
 import gsap from 'gsap'
 
 interface AddVideoDialogProps {
   docId: string
+  categories: string[]
 }
 
-export function AddVideoDialog({ docId }: AddVideoDialogProps) {
+export function AddVideoDialog({ docId, categories }: AddVideoDialogProps) {
   const [open, setOpen] = useState(false)
   const [url, setUrl] = useState('')
   const [title, setTitle] = useState('')
+  const [category, setCategory] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
@@ -49,6 +51,7 @@ export function AddVideoDialog({ docId }: AddVideoDialogProps) {
     setOpen(false)
     setUrl('')
     setTitle('')
+    setCategory('')
     setError('')
   }
 
@@ -70,7 +73,7 @@ export function AddVideoDialog({ docId }: AddVideoDialogProps) {
       return
     }
 
-    const result = await addYouTubeLink(docId, url, title)
+    const result = await addYouTubeLink(docId, url, title, category || undefined)
 
     if (result.success) {
       await handleClose()
@@ -125,6 +128,29 @@ export function AddVideoDialog({ docId }: AddVideoDialogProps) {
               disabled={isLoading}
             />
           </div>
+
+          {categories.length > 0 && (
+            <div>
+              <label htmlFor="category" className="block text-sm font-medium mb-2 flex items-center gap-2">
+                <TagIcon className="size-4" />
+                Category (optional)
+              </label>
+              <select
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                disabled={isLoading}
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <option value="">None</option>
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           {error && (
             <p className="text-destructive text-sm bg-destructive/10 p-2 rounded">

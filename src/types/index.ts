@@ -3,6 +3,7 @@ export interface VideoDocument {
   name: string;
   createdAt: string;
   updatedAt: string;
+  categories: string[];
 }
 
 export interface YouTubeLink {
@@ -11,6 +12,7 @@ export interface YouTubeLink {
   title: string;
   addedAt: string;
   watched: boolean;
+  category?: string;
 }
 
 export interface VideoDocumentWithLinks extends VideoDocument {
