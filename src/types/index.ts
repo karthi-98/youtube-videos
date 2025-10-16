@@ -36,12 +36,26 @@ export interface DayTraining {
   completedAt?: string;
 }
 
+export interface WeekTraining {
+  monday?: DayTraining;
+  tuesday?: DayTraining;
+  wednesday?: DayTraining;
+  thursday?: DayTraining;
+  friday?: DayTraining;
+  saturday?: DayTraining;
+  sunday?: DayTraining;
+}
+
 export interface TrainingMonth {
   month: number;
   phase: string;
   goals: string[];
   bonus_skills_to_work: string[];
   days: { [key: string]: DayTraining }; // day1, day2, ... day28
+  week1?: WeekTraining;
+  week2?: WeekTraining;
+  week3?: WeekTraining;
+  week4?: WeekTraining;
   milestone_check: string[];
 }
 
