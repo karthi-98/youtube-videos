@@ -1,0 +1,1281 @@
+{
+    "program_info": {
+        "title": "Realistic 15-Month Planche Training Program",
+        "start_age": 27,
+        "target_skill": "Full Planche (or Advanced Progression)",
+        "training_frequency": "5-6 days per week",
+        "rest_days": "1-2 days per week",
+        "realistic_expectations": [
+            "Full planche is achievable for some, but advanced tuck or straddle is more realistic for most",
+            "Individual progress varies based on genetics, training history, and consistency",
+            "Some athletes may need 18-24+ months for full planche",
+            "Focus on injury-free progression over speed"
+        ],
+        "important_notes": [
+            "Warm up 10-15 minutes before every session",
+            "Perfect form is mandatory - never sacrifice form for longer holds",
+            "If you feel joint pain (not muscle fatigue), stop and rest",
+            "Sleep 7-9 hours per night",
+            "Eat adequate protein (1.6-2g per kg bodyweight)"
+        ]
+    },
+    "months": [{
+            "month": 1,
+            "phase": "Foundation Building",
+            "goals": [
+                "Build basic pushing strength (20+ push-ups)",
+                "Develop pulling strength (3-5 pull-ups)",
+                "Begin core and compression work",
+                "Condition wrists and shoulders"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Push Strength",
+                    "exercises": [
+                        "Warm-up: 10 min (wrist circles, shoulder rotations)",
+                        "Push-ups: 4 sets of 12-15 reps",
+                        "Pike push-ups: 3 sets of 6-8 reps",
+                        "Plank: 3 sets of 30-40 seconds",
+                        "Scapular push-ups: 3 sets of 10 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-up negatives: 4 sets of 3-5 reps (5 sec descent)",
+                        "Australian rows: 4 sets of 10-12 reps",
+                        "Dead hangs: 3 sets of 20-30 seconds",
+                        "Hollow body hold: 3 sets of 20-30 seconds"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core & Mobility",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Hollow body hold: 3 sets of 30 seconds",
+                        "Arch holds: 3 sets of 20 seconds",
+                        "Compression work (seated): 3 sets of 20 seconds",
+                        "Pike stretches: 3 sets of 30 seconds",
+                        "Shoulder dislocates: 3 sets of 10 reps"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Variations",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Diamond push-ups: 3 sets of 8-10 reps",
+                        "Pseudo planche push-ups (slight lean): 3 sets of 5-8 reps",
+                        "Decline push-ups: 3 sets of 10 reps",
+                        "Plank shoulder taps: 3 sets of 16 taps total"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Skills",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 4 sets to failure (aim 2-4 reps)",
+                        "Chin-ups: 3 sets to failure",
+                        "Crow pose practice: 5 attempts of 5-10 seconds",
+                        "Handstand wall hold: 3 sets of 15-20 seconds"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Active Recovery or Rest",
+                    "exercises": [
+                        "Light stretching: 15 minutes",
+                        "Optional: easy walk or yoga"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Complete Rest",
+                    "exercises": [
+                        "Full rest day",
+                        "Review weekly progress"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 2,
+            "phase": "Foundation Strengthening",
+            "goals": [
+                "Reach 25+ push-ups",
+                "Achieve 5-8 pull-ups",
+                "Hold crow pose 15+ seconds",
+                "Begin frog stand"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Prep",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pseudo planche push-ups: 4 sets of 6-8 reps",
+                        "Planche leans: 4 sets of 10-15 seconds",
+                        "Frog stand: 4 sets of max hold (aim 5-10 sec)",
+                        "Pike push-ups: 3 sets of 8-10 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 4 sets of 5-6 reps",
+                        "Archer rows: 3 sets of 6 each side",
+                        "Hollow body: 3 sets of 40 seconds",
+                        "Hanging knee raises: 3 sets of 8 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core & Compression",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Tuck L-sit attempts: 4 sets of 10-15 seconds",
+                        "Compression drills: 3 sets of 30 seconds",
+                        "V-ups: 3 sets of 8 reps",
+                        "Handstand hold: 3 sets of 25-30 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Strength",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Push-ups: 4 sets of 20 reps",
+                        "Pseudo planche holds: 4 sets of 12-15 seconds",
+                        "Dips: 4 sets of 12-15 reps",
+                        "Crow pose: 3 sets of 15-20 seconds"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Mobility",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 5 sets of 6-7 reps",
+                        "Wide grip pull-ups: 3 sets of 4-5 reps",
+                        "German hangs (light): 3 sets of 15 seconds",
+                        "Full mobility work: 15 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skills Practice",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Frog stand: 5 sets of max hold",
+                        "Handstand: 4 sets of 30-40 seconds",
+                        "Push-ups: 80 total (any sets)",
+                        "Flexibility: 20 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest or light walk"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 3,
+            "phase": "Tuck Planche Introduction",
+            "goals": [
+                "Achieve 8-10 pull-ups",
+                "Hold tuck L-sit 20+ seconds",
+                "Begin tuck planche holds (5+ seconds)",
+                "Master frog stand (30+ seconds)"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Tuck Planche Work",
+                    "exercises": [
+                        "Warm-up: 12 min",
+                        "Frog stand: 3 sets of 30+ seconds",
+                        "Tuck planche attempts: 5 sets of max hold (aim 3-6 sec)",
+                        "Planche leans: 4 sets of 20 seconds",
+                        "Pseudo planche push-ups: 4 sets of 8-10 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 5 sets of 7-9 reps",
+                        "Weighted pull-ups (light): 3 sets of 4-5 reps",
+                        "Tuck front lever holds: 4 sets of 8-12 seconds",
+                        "Hanging leg raises: 3 sets of 8 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core Work",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Tuck L-sit: 4 sets of 20-25 seconds",
+                        "V-ups: 3 sets of 10 reps",
+                        "Compression: 4 sets of 45 seconds",
+                        "Hollow body: 4 sets of 50 seconds",
+                        "Handstand: 4 sets of 40-50 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Power",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted dips: 4 sets of 10-12 reps",
+                        "Pike push-ups (elevated): 4 sets of 8 reps",
+                        "Tuck planche negatives: 3 sets of 4 reps",
+                        "Regular dips: 3 sets of 15 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Mobility",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Archer pull-ups: 3 sets of 4 each side",
+                        "Pull-ups: 4 sets of 8 reps",
+                        "Skin the cat: 3 sets of 3-5 reps",
+                        "Mobility work: 20 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Day",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Tuck planche: 6 sets of max hold",
+                        "Handstand: 5 sets of 50-60 seconds",
+                        "L-sit variations: 4 sets of 25 seconds",
+                        "Push-ups: 100 total",
+                        "Flexibility: 25 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 4,
+            "phase": "Tuck Planche Development",
+            "goals": [
+                "Hold tuck planche 10-12 seconds",
+                "Perform 2-3 tuck planche push-up negatives",
+                "L-sit 30+ seconds",
+                "10-12 pull-ups"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Strength",
+                    "exercises": [
+                        "Warm-up: 12 min",
+                        "Tuck planche: 5 sets of 10-12 seconds",
+                        "Tuck planche negatives: 4 sets of 3-4 reps",
+                        "Planche leans: 4 sets of 25 seconds",
+                        "Pseudo planche push-ups: 4 sets of 10 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Power",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted pull-ups: 4 sets of 6-7 reps",
+                        "Explosive pull-ups: 3 sets of 4 reps",
+                        "Advanced tuck front lever: 4 sets of 10-12 seconds",
+                        "Front lever rows (tuck): 3 sets of 4-5 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core & Compression",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Full L-sit attempts: 4 sets of 20-30 seconds",
+                        "Compression pulls: 4 sets of 20 reps",
+                        "Hollow rocks: 3 sets of 15 reps",
+                        "Handstand: 4 sets of 60 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Variations",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand push-ups (wall): 4 sets of 6-8 reps",
+                        "Ring dips: 4 sets of 10 reps",
+                        "Tuck planche holds: 4 sets of 10 seconds",
+                        "Weighted push-ups: 4 sets of 12 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Endurance",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 5 sets of 10-12 reps",
+                        "Typewriter pull-ups: 3 sets of 4 total",
+                        "Muscle-up progressions: 4 sets",
+                        "Mobility: 20 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Testing Day",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Tuck planche max hold: 2 attempts",
+                        "Tuck planche push-ups: 4 sets to failure",
+                        "Handstand practice: 15 minutes",
+                        "Pull-up max: 1 set",
+                        "Flexibility: 30 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 5,
+            "phase": "Advanced Tuck Development",
+            "goals": [
+                "Transition to advanced tuck planche",
+                "Hold advanced tuck 5-8 seconds",
+                "L-sit 35+ seconds",
+                "12-15 pull-ups"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Advanced Tuck Work",
+                    "exercises": [
+                        "Warm-up: 12 min",
+                        "Advanced tuck planche: 5 sets of max hold (aim 4-7 sec)",
+                        "Tuck planche: 3 sets of 15 seconds",
+                        "Advanced tuck leans: 4 sets of 15-20 seconds",
+                        "Tuck planche push-ups: 4 sets of 4-6 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted pull-ups: 5 sets of 7-8 reps",
+                        "Archer pull-ups: 3 sets of 5 each side",
+                        "Straddle front lever: 4 sets of 8-12 seconds",
+                        "One-arm hang: 3 sets of 10 seconds each"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Core Elite",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Full L-sit: 4 sets of 35 seconds",
+                        "V-sit attempts: 3 sets of 12-15 seconds",
+                        "Dragon flags (tuck): 3 sets of 6 reps",
+                        "Compression: 4 sets of 60 seconds"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Dynamic Push",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand push-ups: 4 sets of 8-10 reps",
+                        "Pseudo planche explosive: 4 sets of 6 reps",
+                        "Ring push-ups: 4 sets of 10 reps",
+                        "Dips variations: 4 sets of 15 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Skill",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-up pyramid: 1-2-3-4-5-4-3-2-1",
+                        "One-arm pull-up progressions: 4 sets each side",
+                        "Muscle-up practice: 4 sets of 3-5 reps",
+                        "Mobility: 25 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Day",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Advanced tuck planche: 6 sets max hold",
+                        "Handstand freestanding: 8 attempts (aim 8-10 sec)",
+                        "Front lever work: 5 sets",
+                        "Flexibility: 30 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 6,
+            "phase": "Advanced Tuck Mastery",
+            "goals": [
+                "Hold advanced tuck 12-15 seconds",
+                "Begin straddle planche (3+ seconds)",
+                "8+ tuck planche push-ups",
+                "Handstand 20+ seconds free"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Straddle Introduction",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Straddle planche attempts: 5 sets max hold (aim 2-4 sec)",
+                        "Advanced tuck: 4 sets of 12-15 seconds",
+                        "Straddle leans: 4 sets of 15 seconds",
+                        "Planche push-ups (adv tuck): 4 sets of 6-8 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Maximum Pull",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted pull-ups (moderate): 5 sets of 6 reps",
+                        "Explosive pull-ups: 4 sets of 4 reps",
+                        "Full front lever: 4 sets of 8-12 seconds",
+                        "Front lever rows: 3 sets of 5 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Compression & Flex",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "V-sit: 4 sets of 18-22 seconds",
+                        "Manna leans: 3 sets of 20 seconds",
+                        "Pike compression: 4 sets of 40 reps",
+                        "Pancake stretch: 4 sets of 60 seconds",
+                        "Handstand press negatives: 3 sets of 4 reps"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Power",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand push-ups (deficit): 4 sets of 7 reps",
+                        "Explosive push-ups: 4 sets of 8 reps",
+                        "Straddle planche negatives: 4 sets of 4 seconds",
+                        "Ring muscle-ups: 4 sets of 3-5 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Volume",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 80-100 total (any sets)",
+                        "Typewriter pull-ups: 3 sets of 6 total",
+                        "Back lever: 4 sets of 15 seconds",
+                        "Mobility: 25 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Testing",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Straddle planche max: 2 attempts",
+                        "Advanced tuck max: 1 attempt",
+                        "Handstand freestanding: 15 minutes practice",
+                        "Skill combinations: 30 minutes",
+                        "Recovery: 30 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 7,
+            "phase": "Straddle Planche Development",
+            "goals": [
+                "Hold straddle planche 6-8 seconds",
+                "Straddle planche negatives",
+                "15+ pull-ups",
+                "All previous skills maintained"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Straddle Focus",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Straddle planche: 6 sets of max hold (aim 5-8 sec)",
+                        "Straddle leans: 4 sets of 20 seconds",
+                        "Advanced tuck: 3 sets of 15 seconds (maintenance)",
+                        "Straddle negatives: 4 sets of 4 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Maintenance",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted pull-ups: 5 sets of 8 reps",
+                        "Wide grip: 4 sets of 10 reps",
+                        "Front lever: 4 sets of 15 seconds",
+                        "Front lever touch: 3 sets of 4 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Active Recovery",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand walking: 15 minutes",
+                        "L-sit variations: 4 sets of 35 seconds",
+                        "Flow training: 20 minutes",
+                        "Full mobility: 25 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Variations",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand push-ups (free): 4 sets of 5-7 reps",
+                        "Ring dips (deep): 4 sets of 12 reps",
+                        "Straddle planche on parallettes: 4 sets of 6-8 sec",
+                        "Pseudo planche push-ups: 4 sets of 12 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Dynamics",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Muscle-ups: 5 sets of 5 reps",
+                        "One-arm pull-up work: 4 sets each side",
+                        "Typewriter (slow): 3 sets of 5 total",
+                        "Mobility: 20 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skill Refinement",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Straddle planche quality: 6 sets max",
+                        "Handstand press (straddle): 4 sets attempts",
+                        "Front lever combos: 4 sets",
+                        "Push-ups: 150 total",
+                        "Flexibility: 35 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 8,
+            "phase": "Straddle Consolidation",
+            "goals": [
+                "Hold straddle 10-12 seconds",
+                "2-3 straddle planche push-ups",
+                "Begin one-leg attempts",
+                "18+ pull-ups"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Straddle Strength",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Straddle planche: 5 sets of 10-12 seconds",
+                        "Straddle push-ups: 4 sets of 2-3 reps",
+                        "One-leg attempts: 4 sets max each leg (aim 3-5 sec)",
+                        "Straddle to tuck: 3 sets of 4 transitions"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Excellence",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted pull-ups (heavy): 5 sets of 5 reps",
+                        "Archer pull-ups (slow): 4 sets of 6 each",
+                        "Front lever: 4 sets of 20 seconds",
+                        "Front lever pull-ups: 3 sets of 4 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skill & Flexibility",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand variations: 25 minutes",
+                        "Press to handstand: 4 sets attempts",
+                        "V-sit: 4 sets of 25 seconds",
+                        "Manna progressions: 4 sets of 35 seconds",
+                        "Active flex: 25 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Dynamic Push",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Straddle planche push-ups: 5 sets to failure",
+                        "Explosive HSPU: 4 sets of 6 reps",
+                        "Ring work: 4 sets of 35 seconds",
+                        "Maltese leans: 3 sets of 20 seconds"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Volume",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 120 total",
+                        "One-arm negatives: 4 sets of 4 each",
+                        "Muscle-up variations: 4 sets of 6 reps",
+                        "Back lever: 4 sets of 25 seconds",
+                        "Mobility: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Testing",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Straddle planche max: 2 attempts",
+                        "One-leg planche: test both legs",
+                        "Skill flow: 35 minutes",
+                        "Pull-up max: 1 set",
+                        "Recovery: 40 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 9,
+            "phase": "One-Leg & Full Planche Intro",
+            "goals": [
+                "Straddle planche 15+ seconds",
+                "One-leg planche 6-8 seconds",
+                "Begin full planche (2-3 seconds)",
+                "Maintain all skills"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Full Planche Introduction",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche attempts: 5 sets max (aim 2-4 sec)",
+                        "One-leg planche: 4 sets of 6-8 sec each",
+                        "Straddle: 3 sets of 15 seconds",
+                        "Full planche leans: 4 sets of 15 seconds"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Maximum Pull",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Weighted pull-ups (heavy): 5 sets of 4 reps",
+                        "One-arm pull-up attempts: 4 sets each",
+                        "Front lever: 4 sets of 25 seconds",
+                        "Iron Cross leans: 3 sets of 12 seconds"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Recovery & Mobility",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Active recovery flow: 25 minutes",
+                        "Handstand work: 20 minutes",
+                        "Compression: 20 minutes",
+                        "Full mobility: 30 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Power",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "90-degree push-ups: 4 sets of 4-6 reps",
+                        "Ring dips (RTO): 4 sets of 10 reps",
+                        "Straddle push-ups: 4 sets of 6 reps",
+                        "HSPU (deficit free): 4 sets of 6 reps"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Mastery",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-up variations: 25 minutes",
+                        "Muscle-up variations: 4 sets of 8 reps",
+                        "Back lever to front lever: 3 sets of 3 transitions",
+                        "Mobility: 25 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Skills & Testing",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche attempts: 6 sets max",
+                        "One-leg max: test each",
+                        "Straddle max: 1 test",
+                        "Skill session: 40 minutes",
+                        "Recovery: 40 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 10,
+            "phase": "Full Planche Development",
+            "goals": [
+                "Hold full planche 5-7 seconds",
+                "Full planche negatives",
+                "One-leg 10+ seconds",
+                "Maintain pull strength"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Full Planche Power",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche: 6 sets max (aim 4-7 sec)",
+                        "Full planche leans: 4 sets of 20 seconds",
+                        "One-leg to full transitions: 3 sets of 3 each",
+                        "Full planche negatives: 4 sets of 4 reps"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Strength Peak",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm pull-ups: 4 sets of 2-4 each",
+                        "Weighted pull-ups: 5 sets of 6 reps",
+                        "Front lever: 4 sets of 30 seconds",
+                        "Iron Cross training: 4 sets"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skill Refinement",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Handstand press variations: 25 minutes",
+                        "Press to planche: 4 sets attempts",
+                        "Manna work: 4 sets of 40 seconds",
+                        "Active flexibility: 30 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Dynamic Push",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Full planche push-up attempts: 4 sets",
+                        "Ring muscle-ups: 4 sets of 6 reps",
+                        "90-degree push-ups: 4 sets of 8 reps",
+                        "Push endurance: 20 minutes"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull Variations",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Pull-ups: 150 total",
+                        "Explosive muscle-ups: 4 sets of 6 reps",
+                        "Back lever: 4 sets of 35 seconds",
+                        "One-arm hang: 4 sets of 40 sec each",
+                        "Mobility: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Testing & Integration",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche max: 3 attempts",
+                        "All variations: test each",
+                        "Skill combinations: 40 minutes",
+                        "Video analysis",
+                        "Recovery: 45 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 11,
+            "phase": "Full Planche Consolidation",
+            "goals": [
+                "Hold full planche 8-10 seconds",
+                "2-3 full planche push-ups",
+                "Advanced variations",
+                "Peak conditioning"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Full Planche Excellence",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche: 5 sets of 8-10 seconds",
+                        "Full planche push-ups: 4 sets of 2-3 reps",
+                        "Planche on rings: 4 sets max",
+                        "Maltese progressions: 4 sets of 30 seconds"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Elite Pull",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm pull-ups: 4 sets of 4-5 each",
+                        "Weighted pull-ups (very heavy): 5 sets of 4 reps",
+                        "Iron Cross on rings: 4 sets max",
+                        "Front lever variations: 4 sets each"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Active Recovery",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Flow training: 35 minutes",
+                        "Handstand variations: 25 minutes",
+                        "Compression & flexibility: 30 minutes",
+                        "Joint health: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Specialist",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Ring dips (full RTO): 4 sets of 12 reps",
+                        "Full planche on parallettes: 4 sets of 8 sec",
+                        "HSPU variations: 4 sets of 8 reps",
+                        "Push endurance: 250 push-ups"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Skills",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm max: test each",
+                        "Typewriter pull-ups: 4 sets of 10 total",
+                        "Muscle-up variations: 30 minutes",
+                        "Mobility: 30 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Peak Performance",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche max: 2 attempts",
+                        "All variations: quality testing",
+                        "Skill showcase: 50 minutes",
+                        "Strength assessment",
+                        "Recovery: 50 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 12,
+            "phase": "Full Planche Mastery",
+            "goals": [
+                "Hold full planche 12+ seconds",
+                "4-5 full planche push-ups",
+                "Ring planche 6+ seconds",
+                "All skills at high level"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Perfection",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche perfect form: 5 sets of 12+ seconds",
+                        "Full planche push-ups: 4 sets of 4-5 reps",
+                        "Ring planche: 4 sets of 6+ seconds",
+                        "All variations quality: 20 minutes"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Peak",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm pull-ups: 4 sets of 6+ each",
+                        "Iron Cross: 4 sets of 12+ seconds",
+                        "Front lever variations: 4 sets each",
+                        "Weighted pull-ups: 4 sets of 8 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skill Integration",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Freestyle skill: 50 minutes",
+                        "Combination flows: 30 minutes",
+                        "Quality refinement: 25 minutes",
+                        "Advanced flexibility: 30 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Excellence",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Ring training: 40 minutes",
+                        "All push variations: excellence",
+                        "90-degree variations: 4 sets",
+                        "HSPU mastery: 4 sets of 12 reps",
+                        "Push endurance: 300 total"
+                    ]
+                },
+                "friday": {
+                    "focus": "Pull & Dynamic",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Explosive variations: 25 minutes",
+                        "Muscle-ups: 4 sets of 10 reps each type",
+                        "One-arm negatives: 4 sets each",
+                        "Dynamic combos: 25 minutes",
+                        "Mobility: 35 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Showcase & Assessment",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche max: ultimate test",
+                        "Video all major skills",
+                        "Strength testing: all metrics",
+                        "Skill showcase: 50 minutes",
+                        "Progress documentation",
+                        "Recovery: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest",
+                        "Review 12-month journey"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 13,
+            "phase": "Advanced Variations",
+            "goals": [
+                "Hold full planche 15+ seconds",
+                "6-7 full planche push-ups",
+                "Master all variations",
+                "Peak conditioning"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Endurance",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche: 5 sets of 15+ seconds",
+                        "Full planche push-ups: 4 sets of 6-7 reps",
+                        "Maltese leans: 4 sets of 35 seconds",
+                        "Ring planche: 5 sets",
+                        "Total volume: 90+ seconds cumulative"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Elite Pulling",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm pull-ups: 4 sets of 8 each",
+                        "Iron Cross: 4 sets of 15 seconds",
+                        "All lever variations: 25 minutes",
+                        "Weighted: 4 sets of 10 reps"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skills & Flow",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Skill combinations: 50 minutes",
+                        "Planche to handstand: 4 sets",
+                        "Advanced transitions: 25 minutes",
+                        "Flexibility: 35 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Volume",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Ring strength: 50 minutes",
+                        "All dip variations",
+                        "HSPU endurance: 80 total",
+                        "Planche push-up variations: 40 total",
+                        "Push endurance: 400 total"
+                    ]
+                },
+                "friday": {
+                    "focus": "Dynamic Excellence",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Explosive complex: 35 minutes",
+                        "All muscle-up types",
+                        "One-arm work: 4 sets each",
+                        "Dynamic combos: 35 minutes",
+                        "Flexibility: 35 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Peak Testing",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche max: push for 15+ sec",
+                        "All variations testing",
+                        "Strength assessment",
+                        "Skill showcase: 50 minutes",
+                        "Document progress",
+                        "Recovery: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 14,
+            "phase": "Mastery & Refinement",
+            "goals": [
+                "Hold full planche 18-20 seconds",
+                "8+ full planche push-ups",
+                "Master advanced ring work",
+                "Peak performance"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Mastery",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche: 5 sets of 18-20 seconds",
+                        "Full planche push-ups: 4 sets of 8+ reps",
+                        "All variations: 35 minutes",
+                        "Ring planche: 5 sets of 10+ seconds",
+                        "Total time: 110+ seconds cumulative"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Mastery",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm pull-ups: 4 sets of 10 each",
+                        "Iron Cross: 4 sets of 18 seconds",
+                        "All pull variations mastery",
+                        "Volume: 200+ pull-ups"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Creative Flow",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Design routines: 50 minutes",
+                        "Experiment movements: 25 minutes",
+                        "Advanced flexibility: 35 minutes",
+                        "Balance mastery: 20 minutes"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Mastery",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Ring mastery: 50 minutes",
+                        "All push variations: perfect form",
+                        "HSPU excellence: 4 sets of 15 reps",
+                        "Create combinations: 25 minutes",
+                        "Endurance: 500 push-ups"
+                    ]
+                },
+                "friday": {
+                    "focus": "Complete Athlete",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Full body strength: 50 minutes",
+                        "All skills integration: 35 minutes",
+                        "Dynamic work: 25 minutes",
+                        "Flexibility: 35 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "Performance Day",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche max: aim 18-20+ sec",
+                        "All skills showcase: 50 minutes",
+                        "Performance routine: 30 minutes",
+                        "Comprehensive filming",
+                        "Deep recovery: 60 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Rest",
+                    "exercises": [
+                        "Complete rest",
+                        "Review journey"
+                    ]
+                }
+            }
+        },
+        {
+            "month": 15,
+            "phase": "Ultimate Achievement",
+            "goals": [
+                "Hold full planche 20+ seconds (if possible)",
+                "10+ full planche push-ups (if possible)",
+                "Master all variations",
+                "Plan future goals"
+            ],
+            "weekly_schedule": {
+                "monday": {
+                    "focus": "Planche Excellence",
+                    "exercises": [
+                        "Warm-up: 15 min",
+                        "Full planche: work toward 20+ seconds",
+                        "Full planche push-ups: 4 sets of 10+ reps",
+                        "All variations perfection: 40 minutes",
+                        "Ring planche: 4 sets of 12+ seconds",
+                        "Maltese progressions: 5 sets"
+                    ]
+                },
+                "tuesday": {
+                    "focus": "Pull Excellence",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "One-arm pull-ups: 4 sets of 12 each",
+                        "Iron Cross: 4 sets of 20+ seconds",
+                        "All pull skills: 40 minutes",
+                        "Volume: 250 total pull-ups"
+                    ]
+                },
+                "wednesday": {
+                    "focus": "Skills Showcase Prep",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Create showcase routine: 50 minutes",
+                        "Perfect all transitions: 35 minutes",
+                        "Quality check: 35 minutes",
+                        "Flexibility display: 30 minutes",
+                        "Film comprehensive showcase"
+                    ]
+                },
+                "thursday": {
+                    "focus": "Push Showcase",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "All push skills perfection: 50 minutes",
+                        "Ring work showcase: 30 minutes",
+                        "Endurance display: 600+ push-ups",
+                        "Document achievements",
+                        "Create showcase routine"
+                    ]
+                },
+                "friday": {
+                    "focus": "Integration",
+                    "exercises": [
+                        "Warm-up: 10 min",
+                        "Full body skill flow: 60 minutes",
+                        "All skills in combination: 35 minutes",
+                        "Freestyle: 30 minutes",
+                        "Strength showcase",
+                        "Final flexibility: 35 minutes"
+                    ]
+                },
+                "saturday": {
+                    "focus": "FINAL ACHIEVEMENT DAY",
+                    "exercises": [
+                        "Warm-up: Perfect prep (15 min)",
+                        "Full planche FINAL TEST",
+                        "Full planche push-ups FINAL TEST",
+                        "Complete skills showcase: comprehensive filming",
+                        "Document ALL achievements",
+                        "Celebrate 15-month journey!",
+                        "Long recovery: 90 minutes"
+                    ]
+                },
+                "sunday": {
+                    "focus": "Completion",
+                    "exercises": [
+                        "Rest and reflect",
+                        "Review all progress",
+                        "Celebrate achievement!",
+                        "Plan future goals",
+                        "Consider next skills",
+                        "Share your journey"
+                    ]
+                }
+            }
+        }
+    ],
+    "realistic_outcome_expectations": {
+        "most_likely_outcomes": [
+            "Advanced tuck planche: 15-20+ seconds (highly achievable)",
+            "Straddle planche: 8-15 seconds (achievable for most)",
+            "Full planche: 3-10 seconds (achievable for some, requires dedication)",
+            "Full planche 15+ seconds: exceptional achievement, not guaranteed"
+        ],
+        "individual_factors": [
+            "Genetics play a significant role in planche progression",
+            "Arm length, shoulder structure affect difficulty significantly",
+            "Previous training history matters greatly",
+            "Consistency is the most important factor",
+            "Some may need 18-24+ months for full planche"
+        ],
+        "success_criteria": "Success is measured by YOUR progress, not arbitrary timelines. If you achieve advanced tuck or straddle planche, you've succeeded tremendously."
+    },
+    "nutrition_guidelines": {
+        "daily_protein": "1.6-2.2g per kg bodyweight",
+        "hydration": "3-4 liters water daily",
+        "calories": "Slight surplus if building, maintenance for skill",
+        "supplements": "Optional: Creatine, Omega-3, Vitamin D, Magnesium",
+        "timing": "Protein within 2 hours post-workout"
+    },
+    "recovery_protocols": {
+        "sleep": "7-9 hours minimum",
+        "rest_days": "1-2 complete rest days per week",
+        "deload_weeks": "Every 6-8 weeks, reduce volume by 40-50%",
+        "injury_prevention": "Never train through pain",
+        "active_recovery": "Walking, swimming, yoga"
+    },
+    "progress_tracking": {
+        "weekly": "Track hold times and reps",
+        "monthly": "Photos and videos from same angles",
+        "quarterly": "Full assessment of all metrics"
+    },
+    "safety_notes": {
+        "warning_signs": [
+            "Sharp joint pain - STOP immediately",
+            "Persistent wrist pain - reduce volume, add rehab",
+            "Shoulder impingement - check form, see professional",
+            "Elbow tendonitis - rest and rehab required"
+        ],
+        "injury_protocol": "If injured, rest 1-2 weeks minimum, see physiotherapist",
+        "form_priorities": [
+            "Shoulders protracted (pushed forward)",
+            "Body completely straight and horizontal",
+            "Full body tension maintained",
+            "Controlled breathing"
+        ]
+    },
+    "final_message": "This is a REALISTIC 15-month journey. Full planche is an elite skill that takes most people 2-3+ years. If you achieve straddle planche with excellent form, you're in the top 1% of fitness. Focus on YOUR progress, not timelines. Stay consistent, avoid injury, and celebrate every milestone. The journey itself transforms you into an exceptional athlete. Trust the process!"
+}

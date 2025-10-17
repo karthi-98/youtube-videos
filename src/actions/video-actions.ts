@@ -65,13 +65,17 @@ export async function addYouTubeLink(docId: string, url: string, title: string, 
   try {
     const docRef = doc(db, 'youtube', docId)
 
-    const newLink = {
+    const newLink: any = {
       id: crypto.randomUUID(),
       url,
       title,
       addedAt: Timestamp.now(),
       watched: false,
-      category: category || undefined,
+    }
+
+    // Only add category if it has a value (Firestore doesn't support undefined)
+    if (category) {
+      newLink.category = category
     }
 
     await updateDoc(docRef, {

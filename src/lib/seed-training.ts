@@ -1,6 +1,6 @@
 import { db } from '@/firebase/config'
 import { collection, doc, setDoc, Timestamp } from 'firebase/firestore'
-import plancheData from '../../planche.json'
+import calisthenicsData from '../../calisthenics-training.json'
 
 interface ChecklistItem {
   text: string
@@ -20,14 +20,12 @@ interface Month {
   month: number
   phase: string
   goals: string[]
-  bonus_skills_to_work: string[]
   weekly_schedule: {
     [key: string]: {
       focus: string
-      checklist: string[]
+      exercises: string[]
     }
   }
-  milestone_check: string[]
 }
 
 function transformToDailySchedule(schedule: any): { [key: string]: DaySchedule } {
@@ -46,7 +44,7 @@ function transformToDailySchedule(schedule: any): { [key: string]: DaySchedule }
         dayNumber: dayNum,
         dayName: dayNames[weekDay],
         focus: dayData.focus,
-        checklist: dayData.checklist.map((item: string) => ({
+        checklist: dayData.exercises.map((item: string) => ({
           text: item,
           completed: false
         }))
@@ -61,7 +59,7 @@ export async function seedTrainingData() {
   try {
     console.log('Starting to seed training data...')
 
-    const months = (plancheData as any).months as Month[]
+    const months = (calisthenicsData as any).months as Month[]
 
     for (const month of months) {
       const monthId = `month-${month.month}`
@@ -71,9 +69,7 @@ export async function seedTrainingData() {
         month: month.month,
         phase: month.phase,
         goals: month.goals,
-        bonus_skills_to_work: month.bonus_skills_to_work,
         days: dailySchedule,
-        milestone_check: month.milestone_check,
         createdAt: Timestamp.now(),
         updatedAt: Timestamp.now()
       }
