@@ -1,42 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { SidebarLayout } from "@/components/layout/sidebar-layout";
-import { getVideoDocuments } from "@/actions/video-actions";
 
-const inter = Inter({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "YouTube Watch Later",
-  description: "Manage your YouTube watch later videos",
+  title: "Video Collection",
+  description: "Organize your YouTube video collections",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const result = await getVideoDocuments();
-  const documents = result.success && result.documents ? result.documents : [];
-
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${sourceSerif.variable} antialiased`}
-      >
-        <SidebarLayout documents={documents}>
-          {children}
-        </SidebarLayout>
+      <body className={`${spaceGrotesk.variable} antialiased bg-white`}>
+        {children}
       </body>
     </html>
   );

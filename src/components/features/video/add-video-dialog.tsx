@@ -2,17 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { addYouTubeLink } from '@/actions/video-actions'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
-import { PlusIcon, TagIcon } from 'lucide-react'
+import { PlusIcon, TagIcon, XIcon } from 'lucide-react'
 import gsap from 'gsap'
 
 interface AddVideoDialogProps {
@@ -27,26 +17,34 @@ export function AddVideoDialog({ docId, categories }: AddVideoDialogProps) {
   const [category, setCategory] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
-  const formRef = useRef<HTMLFormElement>(null)
+  const formRef = useRef<HTMLDivElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (open && formRef.current) {
-      gsap.fromTo(
-        formRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 }
-      )
+    if (open) {
+      document.body.style.overflow = 'hidden'
+      if (overlayRef.current) {
+        gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.3 })
+      }
+      if (formRef.current) {
+        gsap.fromTo(
+          formRef.current,
+          { opacity: 0, y: 30, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out', delay: 0.1 }
+        )
+      }
+    }
+    return () => {
+      document.body.style.overflow = ''
     }
   }, [open])
 
   const handleClose = async () => {
-    if (formRef.current) {
-      await gsap.to(formRef.current, {
-        opacity: 0,
-        y: -20,
-        duration: 0.35,
-        ease: 'power2.in',
-      })
+    if (formRef.current && overlayRef.current) {
+      await Promise.all([
+        gsap.to(formRef.current, { opacity: 0, y: -20, scale: 0.95, duration: 0.25, ease: 'power2.in' }),
+        gsap.to(overlayRef.current, { opacity: 0, duration: 0.25 })
+      ])
     }
     setOpen(false)
     setUrl('')
@@ -66,7 +64,6 @@ export function AddVideoDialog({ docId, categories }: AddVideoDialogProps) {
       return
     }
 
-    // Basic YouTube URL validation
     if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
       setError('Please enter a valid YouTube URL')
       setIsLoading(false)
@@ -85,94 +82,128 @@ export function AddVideoDialog({ docId, categories }: AddVideoDialogProps) {
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button>
-          <PlusIcon />
-          Add Video
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
-        <DialogHeader>
-          <DialogTitle>Add New Video</DialogTitle>
-          <DialogDescription>
-            Add a YouTube video to your watch later collection
-          </DialogDescription>
-        </DialogHeader>
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 mt-4">
-          <div>
-            <label htmlFor="title" className="block text-sm font-medium mb-2">
-              Video Title
-            </label>
-            <Input
-              id="title"
-              type="text"
-              placeholder="Enter video title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              disabled={isLoading}
-              autoFocus
-            />
-          </div>
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        className="p-4 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
+        title="Add video"
+      >
+        <PlusIcon className="size-5" />
+      </button>
 
-          <div>
-            <label htmlFor="url" className="block text-sm font-medium mb-2">
-              YouTube URL
-            </label>
-            <Input
-              id="url"
-              type="url"
-              placeholder="https://youtube.com/watch?v=..."
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              disabled={isLoading}
-            />
-          </div>
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Overlay */}
+          <div
+            ref={overlayRef}
+            className="absolute inset-0 bg-black/50"
+            onClick={handleClose}
+          />
 
-          {categories.length > 0 && (
-            <div>
-              <label htmlFor="category" className="block text-sm font-medium mb-2 flex items-center gap-2">
-                <TagIcon className="size-4" />
-                Category (optional)
-              </label>
-              <select
-                id="category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                disabled={isLoading}
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                <option value="">None</option>
-                {categories.map((cat) => (
-                  <option key={cat} value={cat}>
-                    {cat}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
-
-          {error && (
-            <p className="text-destructive text-sm bg-destructive/10 p-2 rounded">
-              {error}
-            </p>
-          )}
-
-          <div className="flex gap-3 justify-end">
-            <Button
-              type="button"
-              variant="outline"
+          {/* Modal */}
+          <div
+            ref={formRef}
+            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6"
+          >
+            {/* Close button */}
+            <button
               onClick={handleClose}
-              disabled={isLoading}
+              className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full text-neutral-400 hover:text-black hover:bg-neutral-100 transition-colors"
             >
-              Cancel
-            </Button>
-            <Button type="submit" disabled={isLoading}>
-              {isLoading ? 'Adding...' : 'Add Video'}
-            </Button>
+              <XIcon className="size-5" />
+            </button>
+
+            {/* Header */}
+            <div className="mb-6">
+              <h2 className="text-xl font-bold text-black">Add New Video</h2>
+              <p className="text-sm text-neutral-500 mt-1">
+                Add a YouTube video to your watch later collection
+              </p>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label htmlFor="title" className="block text-sm font-medium text-black mb-2">
+                  Video Title
+                </label>
+                <input
+                  id="title"
+                  type="text"
+                  placeholder="Enter video title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  disabled={isLoading}
+                  autoFocus
+                  className="w-full px-4 py-3 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="url" className="block text-sm font-medium text-black mb-2">
+                  YouTube URL
+                </label>
+                <input
+                  id="url"
+                  type="url"
+                  placeholder="https://youtube.com/watch?v=..."
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+
+              {categories.length > 0 && (
+                <div>
+                  <label htmlFor="category" className="block text-sm font-medium text-black mb-2 flex items-center gap-2">
+                    <TagIcon className="size-4" />
+                    Category (optional)
+                  </label>
+                  <select
+                    id="category"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors bg-white"
+                  >
+                    <option value="">None</option>
+                    {categories.map((cat) => (
+                      <option key={cat} value={cat}>
+                        {cat}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {error && (
+                <p className="text-red-500 text-sm bg-red-50 p-3 rounded-xl">
+                  {error}
+                </p>
+              )}
+
+              <div className="flex gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  disabled={isLoading}
+                  className="flex-1 px-5 py-3.5 rounded-2xl bg-neutral-100 text-neutral-600 text-sm font-medium hover:bg-neutral-200 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="flex-1 px-5 py-3.5 rounded-2xl bg-[#1a1a1a] text-[#f5f5f0] text-sm font-medium shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)] disabled:opacity-50 transition-all"
+                >
+                  {isLoading ? 'Adding...' : 'Add Video'}
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-      </DialogContent>
-    </Dialog>
+        </div>
+      )}
+    </>
   )
 }

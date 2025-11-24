@@ -1,7 +1,8 @@
+import Link from 'next/link'
 import { getVideoDocumentById, getVideoDocuments } from '@/actions/video-actions'
 import { AddVideoDialog } from '@/components/features/video/add-video-dialog'
 import { VideoLinkList } from '@/components/features/video/video-link-list'
-import { Separator } from '@/components/ui/separator'
+import { ArrowLeftIcon } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{
@@ -16,10 +17,17 @@ export default async function VideoDocumentPage({ params }: PageProps) {
 
   if (!result.success || !result.document) {
     return (
-      <div className="p-8">
+      <div className="min-h-screen bg-white p-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4">Video Collection</h2>
-          <p className="text-destructive">Failed to load video document. Please try again later.</p>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-black transition-colors mb-8"
+          >
+            <ArrowLeftIcon className="size-4" />
+            Back to Home
+          </Link>
+          <h2 className="text-2xl font-bold text-black mb-4">Video Collection</h2>
+          <p className="text-red-500">Failed to load video document. Please try again later.</p>
         </div>
       </div>
     )
@@ -30,21 +38,35 @@ export default async function VideoDocumentPage({ params }: PageProps) {
   const otherDocuments = allDocuments.filter(doc => doc.id !== id)
 
   return (
-    <div className="p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-start justify-between mb-6">
+    <div className="min-h-screen bg-white">
+      <div className="max-w-6xl mx-auto px-8 py-8">
+        {/* Back Navigation */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-black transition-colors mb-8"
+        >
+          <ArrowLeftIcon className="size-4" />
+          Back to Home
+        </Link>
+
+        {/* Header */}
+        <div className="flex items-start justify-between mb-8 pb-6 border-b border-neutral-200">
           <div>
-            <h2 className="text-2xl font-bold mb-1">{document.name}</h2>
-            <p className="text-sm text-muted-foreground">
+            <h1 className="text-3xl font-bold text-black mb-2">{document.name}</h1>
+            <p className="text-sm text-neutral-500">
               Last updated: {new Date(document.updatedAt).toLocaleDateString()}
             </p>
           </div>
           <AddVideoDialog docId={id} categories={document.categories} />
         </div>
 
-        <Separator className="mb-6" />
-
-        <VideoLinkList docId={id} links={document.links} otherDocuments={otherDocuments} categories={document.categories} />
+        {/* Video List */}
+        <VideoLinkList
+          docId={id}
+          links={document.links}
+          otherDocuments={otherDocuments}
+          categories={document.categories}
+        />
       </div>
     </div>
   )

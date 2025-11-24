@@ -4,9 +4,7 @@ import { useState, useMemo } from 'react'
 import { YouTubeLink, VideoDocument } from '@/types'
 import { VideoLinkItem } from './video-link-item'
 import { addCategory, deleteCategory } from '@/actions/video-actions'
-import { VideoIcon, TagIcon, PlusIcon, Trash2Icon } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { VideoIcon, TagIcon, PlusIcon, XIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface VideoLinkListProps {
@@ -22,18 +20,15 @@ export function VideoLinkList({ docId, links, otherDocuments, categories }: Vide
   const [isAddingCategory, setIsAddingCategory] = useState(false)
   const [showAddCategory, setShowAddCategory] = useState(false)
 
-  // Get category counts
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { All: links.length }
     categories.forEach(cat => {
       counts[cat] = links.filter(link => link.category === cat).length
     })
-    // Count uncategorized
     counts['Uncategorized'] = links.filter(link => !link.category).length
     return counts
   }, [links, categories])
 
-  // Filter links based on selected category
   const filteredLinks = useMemo(() => {
     if (selectedCategory === 'All') return links
     if (selectedCategory === 'Uncategorized') return links.filter(link => !link.category)
@@ -65,7 +60,6 @@ export function VideoLinkList({ docId, links, otherDocuments, categories }: Vide
       alert(result.error || 'Failed to delete category')
     }
 
-    // If the deleted category was selected, reset to All
     if (selectedCategory === categoryName) {
       setSelectedCategory('All')
     }
@@ -73,9 +67,11 @@ export function VideoLinkList({ docId, links, otherDocuments, categories }: Vide
 
   if (links.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-12 text-center border-2 border-dashed rounded-lg">
-        <VideoIcon className="size-12 text-muted-foreground mb-3" />
-        <p className="text-muted-foreground">
+      <div className="flex flex-col items-center justify-center py-16 text-center border-2 border-dashed border-neutral-200 rounded-2xl">
+        <div className="rounded-full bg-neutral-100 p-6 mb-4">
+          <VideoIcon className="size-10 text-neutral-400" />
+        </div>
+        <p className="text-neutral-500">
           No videos saved yet. Click "Add Video" to get started!
         </p>
       </div>
@@ -85,114 +81,131 @@ export function VideoLinkList({ docId, links, otherDocuments, categories }: Vide
   return (
     <div>
       {/* Category Management */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-3">
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <TagIcon className="size-4 text-muted-foreground" />
-            <h4 className="text-sm font-medium text-foreground">Categories</h4>
+            <TagIcon className="size-4 text-neutral-500" />
+            <h4 className="text-sm font-medium text-black">Categories</h4>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
+          <button
             onClick={() => setShowAddCategory(!showAddCategory)}
-            className="text-xs"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-medium rounded-xl bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_15px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] transition-all"
           >
             <PlusIcon className="size-3" />
             Add Category
-          </Button>
+          </button>
         </div>
 
         {/* Add Category Form */}
         {showAddCategory && (
-          <form onSubmit={handleAddCategory} className="mb-4 p-3 border rounded-lg bg-muted/50">
+          <form onSubmit={handleAddCategory} className="mb-4 p-4 border border-neutral-200 rounded-xl bg-neutral-50">
             <div className="flex gap-2">
-              <Input
+              <input
                 type="text"
                 placeholder="Category name..."
                 value={newCategoryName}
                 onChange={(e) => setNewCategoryName(e.target.value)}
                 disabled={isAddingCategory}
-                className="flex-1"
+                className="flex-1 px-4 py-2.5 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
                 autoFocus
               />
-              <Button type="submit" size="sm" disabled={isAddingCategory || !newCategoryName.trim()}>
+              <button
+                type="submit"
+                disabled={isAddingCategory || !newCategoryName.trim()}
+                className="px-5 py-2.5 text-sm font-medium rounded-xl bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_15px_rgba(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
                 Add
-              </Button>
-              <Button
+              </button>
+              <button
                 type="button"
-                variant="outline"
-                size="sm"
                 onClick={() => {
                   setShowAddCategory(false)
                   setNewCategoryName('')
                 }}
                 disabled={isAddingCategory}
+                className="px-5 py-2.5 text-sm font-medium rounded-xl bg-neutral-200 text-neutral-600 hover:bg-neutral-300 transition-colors"
               >
                 Cancel
-              </Button>
+              </button>
             </div>
           </form>
         )}
 
         {/* Category Filter Buttons */}
         <div className="flex flex-wrap gap-2">
-          <Button
-            variant={selectedCategory === 'All' ? 'default' : 'outline'}
-            size="sm"
+          <button
             onClick={() => setSelectedCategory('All')}
-            className="text-xs"
+            className={cn(
+              'inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-all',
+              selectedCategory === 'All'
+                ? 'bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_15px_rgba(0,0,0,0.2)]'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+            )}
           >
             All
-            <span className="ml-1.5 bg-background/20 px-1.5 py-0.5 rounded-md">
+            <span className={cn(
+              'px-1.5 py-0.5 rounded-md text-xs',
+              selectedCategory === 'All' ? 'bg-white/20' : 'bg-neutral-200'
+            )}>
               {categoryCounts.All}
             </span>
-          </Button>
+          </button>
 
           {categoryCounts['Uncategorized'] > 0 && (
-            <Button
-              variant={selectedCategory === 'Uncategorized' ? 'default' : 'outline'}
-              size="sm"
+            <button
               onClick={() => setSelectedCategory('Uncategorized')}
-              className="text-xs"
+              className={cn(
+                'inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-all',
+                selectedCategory === 'Uncategorized'
+                  ? 'bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_15px_rgba(0,0,0,0.2)]'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+              )}
             >
               Uncategorized
-              <span className="ml-1.5 bg-background/20 px-1.5 py-0.5 rounded-md">
+              <span className={cn(
+                'px-1.5 py-0.5 rounded-md text-xs',
+                selectedCategory === 'Uncategorized' ? 'bg-white/20' : 'bg-neutral-200'
+              )}>
                 {categoryCounts['Uncategorized']}
               </span>
-            </Button>
+            </button>
           )}
 
           {categories.map((category) => (
             <div key={category} className="flex items-center gap-1">
-              <Button
-                variant={selectedCategory === category ? 'default' : 'outline'}
-                size="sm"
+              <button
                 onClick={() => setSelectedCategory(category)}
-                className="text-xs"
+                className={cn(
+                  'inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-xl transition-all',
+                  selectedCategory === category
+                    ? 'bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_15px_rgba(0,0,0,0.2)]'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                )}
               >
                 {category}
-                <span className="ml-1.5 bg-background/20 px-1.5 py-0.5 rounded-md">
+                <span className={cn(
+                  'px-1.5 py-0.5 rounded-md text-xs',
+                  selectedCategory === category ? 'bg-white/20' : 'bg-neutral-200'
+                )}>
                   {categoryCounts[category] || 0}
                 </span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon-sm"
+              </button>
+              <button
                 onClick={() => handleDeleteCategory(category)}
-                className="size-7 text-destructive hover:text-destructive"
+                className="size-7 flex items-center justify-center rounded-full text-neutral-400 hover:text-red-500 hover:bg-red-50 transition-colors"
                 title="Delete category"
               >
-                <Trash2Icon className="size-3" />
-              </Button>
+                <XIcon className="size-3.5" />
+              </button>
             </div>
           ))}
         </div>
       </div>
 
       {/* Videos List */}
-      <div className="mb-4">
-        <h3 className="text-base font-semibold mb-4 text-foreground flex items-center gap-2">
-          <span className="bg-primary text-primary-foreground rounded-full px-2.5 py-0.5 text-sm">
+      <div className="mb-6">
+        <h3 className="text-lg font-semibold text-black flex items-center gap-3">
+          <span className="bg-[#1a1a1a] text-[#f5f5f0] rounded-xl px-3 py-1.5 text-sm shadow-[0_4px_15px_rgba(0,0,0,0.2)]">
             {filteredLinks.length}
           </span>
           {selectedCategory === 'All' ? 'Saved Videos' : `${selectedCategory} Videos`}
@@ -200,14 +213,16 @@ export function VideoLinkList({ docId, links, otherDocuments, categories }: Vide
       </div>
 
       {filteredLinks.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-12 text-center border-2 border-dashed rounded-lg">
-          <TagIcon className="size-12 text-muted-foreground mb-3" />
-          <p className="text-muted-foreground">
+        <div className="flex flex-col items-center justify-center py-16 text-center border-2 border-dashed border-neutral-200 rounded-2xl">
+          <div className="rounded-full bg-neutral-100 p-6 mb-4">
+            <TagIcon className="size-10 text-neutral-400" />
+          </div>
+          <p className="text-neutral-500">
             No videos in this category yet.
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredLinks.map((link) => (
             <VideoLinkItem
               key={link.id}

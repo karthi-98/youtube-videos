@@ -84,6 +84,7 @@ export async function addYouTubeLink(docId: string, url: string, title: string, 
     })
 
     revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
     return { success: true, link: newLink }
   } catch (error) {
     console.error('Error adding YouTube link:', error)
@@ -110,6 +111,7 @@ export async function deleteYouTubeLink(docId: string, linkId: string) {
     })
 
     revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
     return { success: true }
   } catch (error) {
     console.error('Error deleting YouTube link:', error)
@@ -183,9 +185,17 @@ export async function updateYouTubeLinkCategory(docId: string, linkId: string, c
 
     const data = docSnap.data()
     const links = data.links || []
-    const updatedLinks = links.map((link: any) =>
-      link.id === linkId ? { ...link, category } : link
-    )
+    const updatedLinks = links.map((link: any) => {
+      if (link.id === linkId) {
+        // If category is empty, remove the category field entirely
+        if (!category) {
+          const { category: _, ...linkWithoutCategory } = link
+          return linkWithoutCategory
+        }
+        return { ...link, category }
+      }
+      return link
+    })
 
     await updateDoc(docRef, {
       links: updatedLinks,
@@ -193,6 +203,7 @@ export async function updateYouTubeLinkCategory(docId: string, linkId: string, c
     })
 
     revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
     return { success: true }
   } catch (error) {
     console.error('Error updating YouTube link category:', error)
@@ -223,6 +234,7 @@ export async function addCategory(docId: string, categoryName: string) {
     })
 
     revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
     return { success: true }
   } catch (error) {
     console.error('Error adding category:', error)
@@ -242,10 +254,14 @@ export async function deleteCategory(docId: string, categoryName: string) {
     const data = docSnap.data()
     const links = data.links || []
 
-    // Remove category from all links that have it
-    const updatedLinks = links.map((link: any) =>
-      link.category === categoryName ? { ...link, category: undefined } : link
-    )
+    // Remove category from all links that have it by removing the category field
+    const updatedLinks = links.map((link: any) => {
+      if (link.category === categoryName) {
+        const { category: _, ...linkWithoutCategory } = link
+        return linkWithoutCategory
+      }
+      return link
+    })
 
     await updateDoc(docRef, {
       categories: arrayRemove(categoryName),
@@ -254,9 +270,82 @@ export async function deleteCategory(docId: string, categoryName: string) {
     })
 
     revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
     return { success: true }
   } catch (error) {
     console.error('Error deleting category:', error)
     return { success: false, error: 'Failed to delete category' }
+  }
+}
+
+export async function toggleVideoWatched(docId: string, linkId: string, watched: boolean) {
+  try {
+    const docRef = doc(db, 'youtube', docId)
+    const docSnap = await getDoc(docRef)
+
+    if (!docSnap.exists()) {
+      return { success: false, error: 'Document not found' }
+    }
+
+    const data = docSnap.data()
+    const links = data.links || []
+    const updatedLinks = links.map((link: any) =>
+      link.id === linkId ? { ...link, watched } : link
+    )
+
+    await updateDoc(docRef, {
+      links: updatedLinks,
+      updatedAt: Timestamp.now(),
+    })
+
+    revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
+    return { success: true }
+  } catch (error) {
+    console.error('Error toggling video watched status:', error)
+    return { success: false, error: 'Failed to update video status' }
+  }
+}
+
+export async function getAllVideosWithDocInfo() {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'youtube'))
+    const allVideos: Array<{
+      docId: string
+      docName: string
+      link: {
+        id: string
+        url: string
+        title: string
+        addedAt: string
+        watched: boolean
+        category?: string
+      }
+    }> = []
+
+    querySnapshot.docs.forEach(docSnap => {
+      const data = docSnap.data()
+      const links = data.links || []
+
+      links.forEach((link: any) => {
+        allVideos.push({
+          docId: docSnap.id,
+          docName: data.name || docSnap.id,
+          link: {
+            id: link.id,
+            url: link.url,
+            title: link.title,
+            addedAt: (link.addedAt?.toDate() || new Date()).toISOString(),
+            watched: link.watched || false,
+            category: link.category,
+          }
+        })
+      })
+    })
+
+    return { success: true, videos: allVideos }
+  } catch (error) {
+    console.error('Error fetching all videos:', error)
+    return { success: false, error: 'Failed to fetch videos' }
   }
 }
