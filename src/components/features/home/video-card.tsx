@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { getYouTubeThumbnailFromUrl } from '@/lib/youtube'
 import { moveYouTubeLink, updateYouTubeLinkCategory, addCategory } from '@/actions/video-actions'
-import { PlayIcon, CheckCircleIcon, EyeIcon, FolderIcon, ArrowRightLeftIcon, XIcon, TagIcon, PlusIcon } from 'lucide-react'
+import { PlayIcon, CheckCircleIcon, EyeIcon, FolderIcon, ArrowRightLeftIcon, XIcon, TagIcon, PlusIcon, MoreVerticalIcon } from 'lucide-react'
 import gsap from 'gsap'
 import {
   Select,
@@ -14,6 +14,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 
 interface Document {
   id: string
@@ -266,22 +272,34 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
               <EyeIcon className="size-4" />
               Watch Now
             </button>
-            <button
-              onClick={() => setShowCategoryDialog(true)}
-              className="p-3 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
-              title="Change category"
-            >
-              <TagIcon className="size-4" />
-            </button>
-            {otherDocuments.length > 0 && (
-              <button
-                onClick={() => setShowMoveDialog(true)}
-                className="p-3 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
-                title="Move to another collection"
-              >
-                <ArrowRightLeftIcon className="size-4" />
-              </button>
-            )}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className="p-3 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
+                  title="More options"
+                >
+                  <MoreVerticalIcon className="size-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 rounded-xl">
+                <DropdownMenuItem
+                  onClick={() => setShowCategoryDialog(true)}
+                  className="cursor-pointer"
+                >
+                  <TagIcon className="size-4 mr-2" />
+                  Change Category
+                </DropdownMenuItem>
+                {otherDocuments.length > 0 && (
+                  <DropdownMenuItem
+                    onClick={() => setShowMoveDialog(true)}
+                    className="cursor-pointer"
+                  >
+                    <ArrowRightLeftIcon className="size-4 mr-2" />
+                    Move to Collection
+                  </DropdownMenuItem>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>
