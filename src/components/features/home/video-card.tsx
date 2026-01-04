@@ -3,9 +3,17 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { getYouTubeThumbnailFromUrl } from '@/lib/youtube'
-import { moveYouTubeLink } from '@/actions/video-actions'
-import { PlayIcon, CheckCircleIcon, EyeIcon, FolderIcon, ArrowRightLeftIcon, XIcon } from 'lucide-react'
+import { moveYouTubeLink, updateYouTubeLinkCategory, addCategory } from '@/actions/video-actions'
+import { PlayIcon, CheckCircleIcon, EyeIcon, FolderIcon, ArrowRightLeftIcon, XIcon, TagIcon, PlusIcon } from 'lucide-react'
 import gsap from 'gsap'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 interface Document {
   id: string
@@ -24,17 +32,28 @@ interface VideoCardProps {
     category?: string
   }
   otherDocuments: Document[]
+  categories: string[]
 }
 
-export function VideoCard({ docId, docName, link, otherDocuments }: VideoCardProps) {
+export function VideoCard({ docId, docName, link, otherDocuments, categories: initialCategories }: VideoCardProps) {
   const [showMoveDialog, setShowMoveDialog] = useState(false)
+  const [showCategoryDialog, setShowCategoryDialog] = useState(false)
   const [isMoving, setIsMoving] = useState(false)
+  const [isUpdatingCategory, setIsUpdatingCategory] = useState(false)
   const [selectedDoc, setSelectedDoc] = useState<Document | null>(
     otherDocuments.length > 0 ? otherDocuments[0] : null
   )
+  const [currentCategory, setCurrentCategory] = useState(link.category || '')
+  const [categories, setCategories] = useState<string[]>(initialCategories)
+  const [showNewCategoryInput, setShowNewCategoryInput] = useState(false)
+  const [newCategoryName, setNewCategoryName] = useState('')
+  const [isAddingCategory, setIsAddingCategory] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
+  const categoryDialogRef = useRef<HTMLDivElement>(null)
+  const categoryOverlayRef = useRef<HTMLDivElement>(null)
+  const newCategoryInputRef = useRef<HTMLInputElement>(null)
   const thumbnailUrl = getYouTubeThumbnailFromUrl(link.url, 'high')
 
   useEffect(() => {
@@ -65,6 +84,31 @@ export function VideoCard({ docId, docName, link, otherDocuments }: VideoCardPro
       document.body.style.overflow = ''
     }
   }, [showMoveDialog])
+
+  useEffect(() => {
+    if (showCategoryDialog) {
+      document.body.style.overflow = 'hidden'
+      if (categoryOverlayRef.current) {
+        gsap.fromTo(categoryOverlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.2 })
+      }
+      if (categoryDialogRef.current) {
+        gsap.fromTo(
+          categoryDialogRef.current,
+          { opacity: 0, y: 20, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: 'power2.out' }
+        )
+      }
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [showCategoryDialog])
+
+  useEffect(() => {
+    if (showNewCategoryInput && newCategoryInputRef.current) {
+      newCategoryInputRef.current.focus()
+    }
+  }, [showNewCategoryInput])
 
   const handleWatch = () => {
     window.open(link.url, '_blank')
@@ -97,6 +141,51 @@ export function VideoCard({ docId, docName, link, otherDocuments }: VideoCardPro
     await moveYouTubeLink(docId, selectedDoc.id, link.id)
     setIsMoving(false)
     setShowMoveDialog(false)
+  }
+
+  const handleCloseCategoryDialog = async () => {
+    if (categoryDialogRef.current && categoryOverlayRef.current) {
+      await Promise.all([
+        gsap.to(categoryDialogRef.current, { opacity: 0, y: -10, scale: 0.95, duration: 0.2 }),
+        gsap.to(categoryOverlayRef.current, { opacity: 0, duration: 0.2 })
+      ])
+    }
+    setShowCategoryDialog(false)
+    setShowNewCategoryInput(false)
+    setNewCategoryName('')
+  }
+
+  const handleCategoryChange = async (value: string) => {
+    if (value === '__new__') {
+      setShowNewCategoryInput(true)
+      return
+    }
+
+    setIsUpdatingCategory(true)
+    const categoryToSet = value === '__none__' ? '' : value
+    const result = await updateYouTubeLinkCategory(docId, link.id, categoryToSet)
+
+    if (result.success) {
+      setCurrentCategory(categoryToSet)
+    }
+    setIsUpdatingCategory(false)
+  }
+
+  const handleAddNewCategory = async () => {
+    if (!newCategoryName.trim()) return
+
+    setIsAddingCategory(true)
+    const result = await addCategory(docId, newCategoryName.trim())
+
+    if (result.success) {
+      setCategories([...categories, newCategoryName.trim()])
+      // Also set this as the current category
+      await updateYouTubeLinkCategory(docId, link.id, newCategoryName.trim())
+      setCurrentCategory(newCategoryName.trim())
+      setNewCategoryName('')
+      setShowNewCategoryInput(false)
+    }
+    setIsAddingCategory(false)
   }
 
   return (
@@ -142,10 +231,13 @@ export function VideoCard({ docId, docName, link, otherDocuments }: VideoCardPro
           )}
 
           {/* Category badge */}
-          {link.category && (
-            <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/90 text-black text-xs font-medium shadow-sm">
-              {link.category}
-            </div>
+          {currentCategory && (
+            <button
+              onClick={() => setShowCategoryDialog(true)}
+              className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/90 text-black text-xs font-medium shadow-sm hover:bg-white hover:shadow-md transition-all cursor-pointer"
+            >
+              {currentCategory}
+            </button>
           )}
         </div>
 
@@ -173,6 +265,13 @@ export function VideoCard({ docId, docName, link, otherDocuments }: VideoCardPro
             >
               <EyeIcon className="size-4" />
               Watch Now
+            </button>
+            <button
+              onClick={() => setShowCategoryDialog(true)}
+              className="p-3 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
+              title="Change category"
+            >
+              <TagIcon className="size-4" />
             </button>
             {otherDocuments.length > 0 && (
               <button
@@ -262,6 +361,130 @@ export function VideoCard({ docId, docName, link, otherDocuments }: VideoCardPro
                 className="flex-1 px-5 py-3.5 rounded-2xl bg-[#1a1a1a] text-[#f5f5f0] text-sm font-medium shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)] disabled:opacity-50 transition-all"
               >
                 {isMoving ? 'Moving...' : 'Confirm Move'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Category Change Dialog */}
+      {showCategoryDialog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Overlay */}
+          <div
+            ref={categoryOverlayRef}
+            className="absolute inset-0 bg-black/50"
+            onClick={handleCloseCategoryDialog}
+          />
+
+          {/* Dialog */}
+          <div
+            ref={categoryDialogRef}
+            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6"
+          >
+            {/* Close button */}
+            <button
+              onClick={handleCloseCategoryDialog}
+              className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full text-neutral-400 hover:text-black hover:bg-neutral-100 transition-colors"
+            >
+              <XIcon className="size-5" />
+            </button>
+
+            {/* Header */}
+            <div className="mb-6">
+              <h2 className="text-xl font-bold text-black">Change Category</h2>
+              <p className="text-sm text-neutral-500 mt-1">
+                Update the category for this video
+              </p>
+            </div>
+
+            {/* Video Title */}
+            <div className="mb-6 p-4 bg-neutral-50 rounded-xl">
+              <p className="text-sm font-medium text-black line-clamp-2">{link.title}</p>
+              {currentCategory && (
+                <p className="text-xs text-neutral-500 mt-1">Current: {currentCategory}</p>
+              )}
+            </div>
+
+            {/* Category Selection */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-black mb-2 flex items-center gap-2">
+                <TagIcon className="size-4" />
+                Category
+              </label>
+              {showNewCategoryInput ? (
+                <div className="flex gap-2">
+                  <input
+                    ref={newCategoryInputRef}
+                    type="text"
+                    placeholder="Enter category name"
+                    value={newCategoryName}
+                    onChange={(e) => setNewCategoryName(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault()
+                        handleAddNewCategory()
+                      } else if (e.key === 'Escape') {
+                        setShowNewCategoryInput(false)
+                        setNewCategoryName('')
+                      }
+                    }}
+                    disabled={isAddingCategory}
+                    className="flex-1 px-4 py-2.5 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleAddNewCategory}
+                    disabled={isAddingCategory || !newCategoryName.trim()}
+                    className="px-4 py-2.5 rounded-xl bg-[#1a1a1a] text-[#f5f5f0] text-sm font-medium hover:bg-black disabled:opacity-50 transition-colors"
+                  >
+                    {isAddingCategory ? 'Adding...' : 'Add'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowNewCategoryInput(false)
+                      setNewCategoryName('')
+                    }}
+                    className="px-3 py-2.5 rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
+                  >
+                    <XIcon className="size-4" />
+                  </button>
+                </div>
+              ) : (
+                <Select
+                  value={currentCategory || '__none__'}
+                  onValueChange={handleCategoryChange}
+                  disabled={isUpdatingCategory}
+                >
+                  <SelectTrigger className="w-full px-4 py-3 h-auto text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors bg-white">
+                    <SelectValue placeholder="Select a category" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-xl">
+                    <SelectItem value="__none__">None</SelectItem>
+                    {categories.map((cat) => (
+                      <SelectItem key={cat} value={cat}>
+                        {cat}
+                      </SelectItem>
+                    ))}
+                    <SelectSeparator />
+                    <SelectItem value="__new__" className="text-blue-600">
+                      <PlusIcon className="size-4 mr-1" />
+                      Add new category
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
+            </div>
+
+            {/* Actions */}
+            <div className="flex gap-3">
+              <button
+                onClick={handleCloseCategoryDialog}
+                disabled={isUpdatingCategory}
+                className="flex-1 px-5 py-3.5 rounded-2xl bg-neutral-100 text-neutral-600 text-sm font-medium hover:bg-neutral-200 transition-colors"
+              >
+                Close
               </button>
             </div>
           </div>

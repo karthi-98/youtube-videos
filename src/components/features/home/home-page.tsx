@@ -157,6 +157,7 @@ export function HomePage({ videos, documents }: HomePageProps) {
                 const otherDocs = documents
                   .filter((doc) => doc.id !== video.docId)
                   .map((doc) => ({ id: doc.id, name: doc.name }))
+                const currentDocCategories = documents.find((doc) => doc.id === video.docId)?.categories || []
                 return (
                   <VideoCard
                     key={video.link.id}
@@ -164,6 +165,7 @@ export function HomePage({ videos, documents }: HomePageProps) {
                     docName={video.docName}
                     link={video.link}
                     otherDocuments={otherDocs}
+                    categories={currentDocCategories}
                   />
                 )
               })}
