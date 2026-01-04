@@ -1,12 +1,20 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useState, useTransition, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { VideoCard } from './video-card'
 import { AddVideoDialog } from '@/components/features/video/add-video-dialog'
 import { CategoryManager } from './category-manager'
-import { RefreshCwIcon } from 'lucide-react'
+import { RefreshCwIcon, FilterIcon } from 'lucide-react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 interface VideoWithDocInfo {
   docId: string
@@ -36,8 +44,14 @@ type TabType = 'rewatched' | 'toWatch'
 
 export function HomePage({ videos, documents }: HomePageProps) {
   const [activeTab, setActiveTab] = useState<TabType>('toWatch')
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
+
+  // Reset category filter when switching tabs
+  useEffect(() => {
+    setSelectedCategory(null)
+  }, [activeTab])
 
   const handleReload = () => {
     startTransition(() => {
@@ -56,16 +70,34 @@ export function HomePage({ videos, documents }: HomePageProps) {
   })
 
   // Filter videos based on which document/collection they belong to
-  const filteredVideos = videos.filter((video) => {
+  const tabFilteredVideos = videos.filter((video) => {
     const docNameLower = video.docName.toLowerCase()
     if (activeTab === 'rewatched') {
-      // Show videos from VideosShouldBeRewatched document
       return docNameLower === 'videosshouldberewatched'
     } else {
-      // Show videos from VideosToWatch document
       return docNameLower === 'videostowatch'
     }
   })
+
+  // Further filter by category if selected
+  const filteredVideos = selectedCategory
+    ? tabFilteredVideos.filter((video) => {
+        if (selectedCategory === '__uncategorized__') {
+          return !video.link.category
+        }
+        return video.link.category === selectedCategory
+      })
+    : tabFilteredVideos
+
+  // Get unique categories from current tab's videos with counts
+  const categoryCounts = tabFilteredVideos.reduce((acc, video) => {
+    const cat = video.link.category || '__uncategorized__'
+    acc[cat] = (acc[cat] || 0) + 1
+    return acc
+  }, {} as Record<string, number>)
+
+  // Get categories from the current document
+  const availableCategories = currentDoc?.categories || []
 
   // Count videos for each tab
   const rewatchedCount = videos.filter(
@@ -167,7 +199,45 @@ export function HomePage({ videos, documents }: HomePageProps) {
 
       {/* Videos Section */}
       <div className="max-w-7xl mx-auto px-8 pb-20">
-        {filteredVideos.length === 0 ? (
+        {/* Category Filter */}
+        {tabFilteredVideos.length > 0 && (availableCategories.length > 0 || categoryCounts['__uncategorized__']) && (
+          <div className="mb-8 flex items-center gap-3">
+            <FilterIcon className="size-4 text-neutral-400" />
+            <span className="text-sm font-medium text-neutral-600">Filter by category</span>
+            <Select
+              value={selectedCategory || '__all__'}
+              onValueChange={(value) => setSelectedCategory(value === '__all__' ? null : value)}
+            >
+              <SelectTrigger className="w-[200px] rounded-xl border-neutral-300">
+                <SelectValue placeholder="All categories" />
+              </SelectTrigger>
+              <SelectContent className="rounded-xl">
+                <SelectItem value="__all__">
+                  All categories ({tabFilteredVideos.length})
+                </SelectItem>
+                <SelectSeparator />
+                {availableCategories.map((category) => {
+                  const count = categoryCounts[category] || 0
+                  return (
+                    <SelectItem key={category} value={category}>
+                      {category} ({count})
+                    </SelectItem>
+                  )
+                })}
+                {categoryCounts['__uncategorized__'] > 0 && (
+                  <>
+                    <SelectSeparator />
+                    <SelectItem value="__uncategorized__">
+                      Uncategorized ({categoryCounts['__uncategorized__']})
+                    </SelectItem>
+                  </>
+                )}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
+
+        {filteredVideos.length === 0 && !selectedCategory ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
             <div className="rounded-full bg-neutral-100 p-10 mb-8">
               <svg
@@ -195,11 +265,34 @@ export function HomePage({ videos, documents }: HomePageProps) {
                 : 'Add videos to your collections to see them here.'}
             </p>
           </div>
+        ) : filteredVideos.length === 0 && selectedCategory ? (
+          <div className="flex flex-col items-center justify-center py-20 text-center">
+            <div className="rounded-full bg-neutral-100 p-10 mb-8">
+              <FilterIcon className="size-12 text-neutral-400" />
+            </div>
+            <h2 className="text-2xl font-semibold text-black mb-3">
+              No videos in this category
+            </h2>
+            <p className="text-base text-neutral-500 max-w-md mb-6">
+              There are no videos in the &quot;{selectedCategory === '__uncategorized__' ? 'Uncategorized' : selectedCategory}&quot; category.
+            </p>
+            <button
+              onClick={() => setSelectedCategory(null)}
+              className="px-6 py-3 rounded-xl bg-[#1a1a1a] text-white text-sm font-medium hover:bg-black transition-colors"
+            >
+              Clear filter
+            </button>
+          </div>
         ) : (
           <>
             <div className="mb-8 flex items-center justify-between border-b border-neutral-200 pb-4">
               <p className="text-sm text-neutral-500">
                 {filteredVideos.length} {filteredVideos.length === 1 ? 'video' : 'videos'}
+                {selectedCategory && (
+                  <span className="ml-1">
+                    in &quot;{selectedCategory === '__uncategorized__' ? 'Uncategorized' : selectedCategory}&quot;
+                  </span>
+                )}
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
