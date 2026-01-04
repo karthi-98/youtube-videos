@@ -349,3 +349,50 @@ export async function getAllVideosWithDocInfo() {
     return { success: false, error: 'Failed to fetch videos' }
   }
 }
+
+export async function migrateExistingVideosToUnknownCategory() {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'youtube'))
+    let totalUpdated = 0
+
+    for (const docSnap of querySnapshot.docs) {
+      const data = docSnap.data()
+      const links = data.links || []
+      const categories = data.categories || []
+
+      // Check if any links need updating (don't have a category)
+      const hasUncategorizedLinks = links.some((link: any) => !link.category)
+
+      if (hasUncategorizedLinks) {
+        // Update links without category to have 'unknown'
+        const updatedLinks = links.map((link: any) => {
+          if (!link.category) {
+            return { ...link, category: 'unknown' }
+          }
+          return link
+        })
+
+        // Add 'unknown' to categories if not present
+        const updatedCategories = categories.includes('unknown')
+          ? categories
+          : [...categories, 'unknown']
+
+        const docRef = doc(db, 'youtube', docSnap.id)
+        await updateDoc(docRef, {
+          links: updatedLinks,
+          categories: updatedCategories,
+          updatedAt: Timestamp.now(),
+        })
+
+        totalUpdated += updatedLinks.filter((l: any) => l.category === 'unknown').length -
+                        links.filter((l: any) => l.category === 'unknown').length
+      }
+    }
+
+    revalidatePath('/')
+    return { success: true, message: `Migration complete. Updated ${totalUpdated} videos to 'unknown' category.` }
+  } catch (error) {
+    console.error('Error migrating videos:', error)
+    return { success: false, error: 'Failed to migrate videos' }
+  }
+}
