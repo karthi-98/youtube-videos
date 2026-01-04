@@ -278,6 +278,52 @@ export async function deleteCategory(docId: string, categoryName: string) {
   }
 }
 
+export async function editCategory(docId: string, oldName: string, newName: string) {
+  try {
+    const docRef = doc(db, 'youtube', docId)
+    const docSnap = await getDoc(docRef)
+
+    if (!docSnap.exists()) {
+      return { success: false, error: 'Document not found' }
+    }
+
+    const data = docSnap.data()
+    const categories = data.categories || []
+    const links = data.links || []
+
+    // Check if new name already exists
+    if (categories.includes(newName)) {
+      return { success: false, error: 'Category with this name already exists' }
+    }
+
+    // Update categories array
+    const updatedCategories = categories.map((cat: string) =>
+      cat === oldName ? newName : cat
+    )
+
+    // Update all links that have the old category name
+    const updatedLinks = links.map((link: any) => {
+      if (link.category === oldName) {
+        return { ...link, category: newName }
+      }
+      return link
+    })
+
+    await updateDoc(docRef, {
+      categories: updatedCategories,
+      links: updatedLinks,
+      updatedAt: Timestamp.now(),
+    })
+
+    revalidatePath(`/video/${docId}`)
+    revalidatePath('/')
+    return { success: true }
+  } catch (error) {
+    console.error('Error editing category:', error)
+    return { success: false, error: 'Failed to edit category' }
+  }
+}
+
 export async function toggleVideoWatched(docId: string, linkId: string, watched: boolean) {
   try {
     const docRef = doc(db, 'youtube', docId)

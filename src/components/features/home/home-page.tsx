@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { VideoCard } from './video-card'
 import { AddVideoDialog } from '@/components/features/video/add-video-dialog'
-import { RefreshCwIcon, PlusIcon } from 'lucide-react'
+import { CategoryManager } from './category-manager'
+import { RefreshCwIcon } from 'lucide-react'
 
 interface VideoWithDocInfo {
   docId: string
@@ -66,6 +67,14 @@ export function HomePage({ videos, documents }: HomePageProps) {
     }
   })
 
+  // Count videos for each tab
+  const rewatchedCount = videos.filter(
+    (v) => v.docName.toLowerCase() === 'videosshouldberewatched'
+  ).length
+  const toWatchCount = videos.filter(
+    (v) => v.docName.toLowerCase() === 'videostowatch'
+  ).length
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Minimalist centered design */}
@@ -73,45 +82,86 @@ export function HomePage({ videos, documents }: HomePageProps) {
         <h1 className="text-5xl font-bold text-black text-center tracking-tight leading-[1.1]">
           My Youtube Collections
         </h1>
-        {/* <p className="mt-8 text-lg md:text-xl text-neutral-500 text-center max-w-lg">
-          Organize your YouTube videos in minutes—never lose track again
-        </p> */}
 
-        {/* Tab Options */}
-        <div className="flex items-center gap-4 mt-12">
-          <button
-            onClick={() => setActiveTab('rewatched')}
-            className={cn(
-              'px-8 py-4 rounded-2xl text-base font-medium transition-all duration-200 hover:cursor-pointer',
-              activeTab === 'rewatched'
-                ? 'bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_8px_30px_rgba(0,0,0,0.3)]'
-                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black'
+        {/* Tab Switch + Actions */}
+        <div className="flex items-center gap-6 mt-12">
+          {/* Tab Switch Container */}
+          <div className="relative bg-neutral-100 p-1.5 rounded-2xl">
+            {/* Sliding Background Indicator */}
+            <div
+              className={cn(
+                'absolute top-1.5 bottom-1.5 w-[calc(50%-3px)] bg-[#1a1a1a] rounded-xl shadow-lg transition-all duration-300 ease-out',
+                activeTab === 'rewatched' ? 'left-1.5' : 'left-[calc(50%+1.5px)]'
+              )}
+            />
+
+            {/* Tab Buttons */}
+            <div className="relative flex">
+              <button
+                onClick={() => setActiveTab('rewatched')}
+                className={cn(
+                  'relative z-10 px-6 py-3 rounded-xl text-sm font-medium transition-colors duration-300 hover:cursor-pointer flex items-center gap-2',
+                  activeTab === 'rewatched'
+                    ? 'text-white'
+                    : 'text-neutral-600 hover:text-black'
+                )}
+              >
+                Rewatch
+                <span
+                  className={cn(
+                    'px-2 py-0.5 rounded-full text-xs font-semibold transition-colors duration-300',
+                    activeTab === 'rewatched'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-neutral-200 text-neutral-600'
+                  )}
+                >
+                  {rewatchedCount}
+                </span>
+              </button>
+              <button
+                onClick={() => setActiveTab('toWatch')}
+                className={cn(
+                  'relative z-10 px-6 py-3 rounded-xl text-sm font-medium transition-colors duration-300 hover:cursor-pointer flex items-center gap-2',
+                  activeTab === 'toWatch'
+                    ? 'text-white'
+                    : 'text-neutral-600 hover:text-black'
+                )}
+              >
+                To Watch
+                <span
+                  className={cn(
+                    'px-2 py-0.5 rounded-full text-xs font-semibold transition-colors duration-300',
+                    activeTab === 'toWatch'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-neutral-200 text-neutral-600'
+                  )}
+                >
+                  {toWatchCount}
+                </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="h-8 w-px bg-neutral-200" />
+
+          {/* Action Buttons */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleReload}
+              disabled={isPending}
+              className="p-3 rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 disabled:opacity-50 hover:cursor-pointer disabled:hover:cursor-not-allowed"
+              title="Reload videos"
+            >
+              <RefreshCwIcon className={cn('size-5', isPending && 'animate-spin')} />
+            </button>
+            {currentDoc && (
+              <>
+                <CategoryManager docId={currentDoc.id} categories={currentDoc.categories} />
+                <AddVideoDialog docId={currentDoc.id} categories={currentDoc.categories} />
+              </>
             )}
-          >
-            VideosShouldBeRewatched
-          </button>
-          <button
-            onClick={() => setActiveTab('toWatch')}
-            className={cn(
-              'px-8 py-4 rounded-2xl text-base font-medium transition-all duration-200 hover:cursor-pointer',
-              activeTab === 'toWatch'
-                ? 'bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_8px_30px_rgba(0,0,0,0.3)]'
-                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black'
-            )}
-          >
-            VideosToWatch
-          </button>
-          <button
-            onClick={handleReload}
-            disabled={isPending}
-            className="p-4 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 disabled:opacity-50 hover:cursor-pointer disabled:hover:cursor-not-allowed"
-            title="Reload videos"
-          >
-            <RefreshCwIcon className={cn('size-5', isPending && 'animate-spin')} />
-          </button>
-          {currentDoc && (
-            <AddVideoDialog docId={currentDoc.id} categories={currentDoc.categories} />
-          )}
+          </div>
         </div>
       </div>
 

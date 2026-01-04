@@ -132,7 +132,7 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
     <>
       <button
         onClick={() => setOpen(true)}
-        className="p-4 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
+        className="p-3 rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
         title="Add video"
       >
         <PlusIcon className="size-5" />
