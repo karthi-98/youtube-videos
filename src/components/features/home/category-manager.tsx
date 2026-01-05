@@ -135,15 +135,15 @@ export function CategoryManager({ docId, categories: initialCategories, isNeo = 
       <button
         onClick={() => setOpen(true)}
         className={cn(
-          "p-3 transition-all duration-200 hover:cursor-pointer",
+          "p-2 transition-all duration-200 hover:cursor-pointer",
           isNeo
-            ? "border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
-            : "rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black"
+            ? "border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px]"
+            : "rounded-lg bg-white border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:text-black hover:border-neutral-300"
         )}
         style={isNeo ? { backgroundColor: neoTheme.accent } : undefined}
         title="Manage categories"
       >
-        <TagIcon className="size-5" />
+        <TagIcon className="size-4" />
       </button>
 
       {open && (

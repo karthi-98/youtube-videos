@@ -114,60 +114,56 @@ export function HomePage({ videos, documents }: HomePageProps) {
     <div
       className={cn(
         "min-h-screen transition-colors duration-300",
-        !isNeo && "bg-white"
+        !isNeo && "bg-neutral-50"
       )}
       style={isNeo ? { backgroundColor: neoTheme.bg } : undefined}
     >
-      {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center pt-10 pb-16 px-8">
-        <h1 className={cn(
-          "text-5xl font-bold text-black text-center leading-[1.1] transition-all duration-300",
-          isNeo ? "uppercase tracking-wider" : "tracking-tight"
-        )}>
-          {isNeo ? "VIDEO VAULT" : "My Youtube Collections"}
-        </h1>
-
-        {/* Tab Switch + Actions */}
-        <div className="flex items-center gap-6 mt-12">
-          {/* Tab Switch Container */}
+      {/* Toolbar */}
+      <div
+        className={cn(
+          "sticky top-16 z-30 transition-all duration-300",
+          isNeo
+            ? "bg-white border-b-3 border-black"
+            : "bg-white/80 backdrop-blur-md border-b border-neutral-200/80"
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          {/* Tab Switch */}
           <div className={cn(
-            "relative p-1.5 transition-all duration-300",
+            "relative p-1 transition-all duration-300",
             isNeo
-              ? "bg-white border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-              : "bg-neutral-100 rounded-2xl"
+              ? "bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+              : "bg-neutral-100 rounded-xl"
           )}>
-            {/* Sliding Background Indicator */}
             <div
               className={cn(
-                'absolute top-1.5 bottom-1.5 w-[calc(50%-3px)] transition-all duration-300 ease-out',
+                'absolute top-1 bottom-1 w-[calc(50%-4px)] transition-all duration-300 ease-out',
                 isNeo
-                  ? "border-2 border-black"
-                  : "bg-[#1a1a1a] rounded-xl shadow-lg",
-                activeTab === 'rewatched' ? 'left-1.5' : 'left-[calc(50%+1.5px)]'
+                  ? "border border-black"
+                  : "bg-white rounded-lg shadow-sm",
+                activeTab === 'rewatched' ? 'left-1' : 'left-[calc(50%+2px)]'
               )}
               style={isNeo ? { backgroundColor: neoTheme.primary } : undefined}
             />
-
-            {/* Tab Buttons */}
             <div className="relative flex">
               <button
                 onClick={() => setActiveTab('rewatched')}
                 className={cn(
-                  'relative z-10 px-6 py-3 text-sm font-medium transition-colors duration-300 hover:cursor-pointer flex items-center gap-2',
-                  isNeo ? "font-bold uppercase" : "rounded-xl",
+                  'relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 hover:cursor-pointer flex items-center gap-2',
+                  isNeo ? "font-bold uppercase text-xs" : "rounded-lg",
                   activeTab === 'rewatched'
-                    ? isNeo ? 'text-black' : 'text-white'
-                    : 'text-neutral-600 hover:text-black'
+                    ? isNeo ? 'text-black' : 'text-black'
+                    : 'text-neutral-500 hover:text-black'
                 )}
               >
                 Rewatch
                 <span
                   className={cn(
-                    'px-2 py-0.5 text-xs font-semibold transition-colors duration-300',
-                    isNeo ? "border-2 border-black bg-white" : "rounded-full",
+                    'px-1.5 py-0.5 text-xs font-semibold transition-colors duration-300',
+                    isNeo ? "border border-black bg-white text-black" : "rounded-full",
                     activeTab === 'rewatched'
-                      ? isNeo ? 'text-black' : 'bg-white/20 text-white'
-                      : isNeo ? 'bg-neutral-100' : 'bg-neutral-200 text-neutral-600'
+                      ? isNeo ? '' : 'bg-black/10 text-black'
+                      : isNeo ? 'bg-neutral-100' : 'bg-neutral-200/80 text-neutral-500'
                   )}
                 >
                   {rewatchedCount}
@@ -176,21 +172,21 @@ export function HomePage({ videos, documents }: HomePageProps) {
               <button
                 onClick={() => setActiveTab('toWatch')}
                 className={cn(
-                  'relative z-10 px-6 py-3 text-sm font-medium transition-colors duration-300 hover:cursor-pointer flex items-center gap-2',
-                  isNeo ? "font-bold uppercase" : "rounded-xl",
+                  'relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 hover:cursor-pointer flex items-center gap-2',
+                  isNeo ? "font-bold uppercase text-xs" : "rounded-lg",
                   activeTab === 'toWatch'
-                    ? isNeo ? 'text-black' : 'text-white'
-                    : 'text-neutral-600 hover:text-black'
+                    ? isNeo ? 'text-black' : 'text-black'
+                    : 'text-neutral-500 hover:text-black'
                 )}
               >
                 To Watch
                 <span
                   className={cn(
-                    'px-2 py-0.5 text-xs font-semibold transition-colors duration-300',
-                    isNeo ? "border-2 border-black bg-white" : "rounded-full",
+                    'px-1.5 py-0.5 text-xs font-semibold transition-colors duration-300',
+                    isNeo ? "border border-black bg-white text-black" : "rounded-full",
                     activeTab === 'toWatch'
-                      ? isNeo ? 'text-black' : 'bg-white/20 text-white'
-                      : isNeo ? 'bg-neutral-100' : 'bg-neutral-200 text-neutral-600'
+                      ? isNeo ? '' : 'bg-black/10 text-black'
+                      : isNeo ? 'bg-neutral-100' : 'bg-neutral-200/80 text-neutral-500'
                   )}
                 >
                   {toWatchCount}
@@ -199,27 +195,21 @@ export function HomePage({ videos, documents }: HomePageProps) {
             </div>
           </div>
 
-          {/* Divider */}
-          <div className={cn(
-            "h-8 w-px transition-colors duration-300",
-            isNeo ? "bg-black w-1" : "bg-neutral-200"
-          )} />
-
-          {/* Action Buttons */}
+          {/* Actions */}
           <div className="flex items-center gap-2">
             <button
               onClick={handleReload}
               disabled={isPending}
               className={cn(
-                "p-3 transition-all duration-200 disabled:opacity-50 hover:cursor-pointer disabled:hover:cursor-not-allowed",
+                "p-2 transition-all duration-200 disabled:opacity-50 hover:cursor-pointer disabled:hover:cursor-not-allowed",
                 isNeo
-                  ? "border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
-                  : "rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black"
+                  ? "border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px]"
+                  : "rounded-lg bg-white border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:text-black hover:border-neutral-300"
               )}
               style={isNeo ? { backgroundColor: neoTheme.secondary } : undefined}
               title="Reload videos"
             >
-              <RefreshCwIcon className={cn('size-5', isPending && 'animate-spin')} />
+              <RefreshCwIcon className={cn('size-4', isPending && 'animate-spin')} />
             </button>
             {currentDoc && (
               <>
@@ -232,17 +222,17 @@ export function HomePage({ videos, documents }: HomePageProps) {
       </div>
 
       {/* Videos Section */}
-      <div className="max-w-7xl mx-auto px-8 pb-20">
+      <div className="max-w-7xl mx-auto px-6 py-6 pb-20">
         {/* Category Filter */}
         {tabFilteredVideos.length > 0 && (availableCategories.length > 0 || categoryCounts['__uncategorized__']) && (
           <div className={cn(
-            "mb-8 flex items-center gap-3 p-4 transition-all duration-300",
-            isNeo ? "bg-white border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" : ""
+            "mb-6 flex items-center gap-3 transition-all duration-300",
+            isNeo ? "p-3 bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]" : ""
           )}>
             <FilterIcon className={cn("size-4", isNeo ? "text-black" : "text-neutral-400")} />
             <span className={cn(
-              "text-sm font-medium",
-              isNeo ? "text-black uppercase font-bold" : "text-neutral-600"
+              "text-sm",
+              isNeo ? "text-black uppercase font-bold text-xs" : "text-neutral-500 font-medium"
             )}>Filter</span>
             <Select
               value={selectedCategory || '__all__'}
@@ -250,17 +240,17 @@ export function HomePage({ videos, documents }: HomePageProps) {
             >
               <SelectTrigger
                 className={cn(
-                  "w-[200px] transition-all duration-300",
+                  "w-[180px] h-9 transition-all duration-300",
                   isNeo
-                    ? "rounded-none border-3 border-black font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                    : "rounded-xl border-neutral-300"
+                    ? "rounded-none border-2 border-black font-bold text-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    : "rounded-lg border-neutral-200 bg-white text-sm"
                 )}
                 style={isNeo ? { backgroundColor: neoTheme.accent } : undefined}
               >
                 <SelectValue placeholder="All categories" />
               </SelectTrigger>
               <SelectContent className={cn(
-                isNeo ? "rounded-none border-3 border-black" : "rounded-xl"
+                isNeo ? "rounded-none border-2 border-black" : "rounded-lg"
               )}>
                 <SelectItem value="__all__">
                   All categories ({tabFilteredVideos.length})
@@ -335,8 +325,14 @@ export function HomePage({ videos, documents }: HomePageProps) {
           </div>
         ) : (
           <>
-            <div className="mb-8 flex items-center justify-between border-b border-neutral-200 pb-4">
-              <p className="text-sm text-neutral-500">
+            <div className={cn(
+              "mb-6 flex items-center justify-between pb-3",
+              isNeo ? "border-b-2 border-black" : "border-b border-neutral-200"
+            )}>
+              <p className={cn(
+                "text-sm",
+                isNeo ? "font-bold text-black" : "text-neutral-500"
+              )}>
                 {filteredVideos.length} {filteredVideos.length === 1 ? 'video' : 'videos'}
                 {selectedCategory && (
                   <span className="ml-1">
@@ -347,7 +343,7 @@ export function HomePage({ videos, documents }: HomePageProps) {
             </div>
             <div className={cn(
               "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-              isNeo ? "gap-6" : "gap-8"
+              isNeo ? "gap-5" : "gap-6"
             )}>
               {filteredVideos.map((video) => {
                 const otherDocs = documents

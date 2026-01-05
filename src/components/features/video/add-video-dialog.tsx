@@ -137,15 +137,15 @@ export function AddVideoDialog({ docId, categories: initialCategories, isNeo = f
       <button
         onClick={() => setOpen(true)}
         className={cn(
-          "p-3 transition-all duration-200 hover:cursor-pointer",
+          "p-2 transition-all duration-200 hover:cursor-pointer",
           isNeo
-            ? "border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
-            : "rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black"
+            ? "border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px]"
+            : "rounded-lg bg-black text-white hover:bg-neutral-800"
         )}
         style={isNeo ? { backgroundColor: neoTheme.secondary } : undefined}
         title="Add video"
       >
-        <PlusIcon className="size-5" />
+        <PlusIcon className="size-4" />
       </button>
 
       {open && (

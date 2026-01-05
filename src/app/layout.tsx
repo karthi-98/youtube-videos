@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { DesignProvider } from "@/components/providers/design-provider";
-import { DesignSwitcher } from "@/components/features/design-switcher";
+import { Header } from "@/components/layout/header";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Video Collection",
+  title: "VideoVault",
   description: "Organize your YouTube video collections",
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${spaceGrotesk.variable} antialiased bg-white`}>
         <DesignProvider>
-          <DesignSwitcher />
+          <Header />
           {children}
         </DesignProvider>
       </body>
