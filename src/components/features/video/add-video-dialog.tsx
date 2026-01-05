@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { addYouTubeLink, addCategory } from '@/actions/video-actions'
 import { PlusIcon, TagIcon, XIcon } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { useDesign } from '@/components/providers/design-provider'
 import gsap from 'gsap'
 import {
   Select,
@@ -16,9 +18,11 @@ import {
 interface AddVideoDialogProps {
   docId: string
   categories: string[]
+  isNeo?: boolean
 }
 
-export function AddVideoDialog({ docId, categories: initialCategories }: AddVideoDialogProps) {
+export function AddVideoDialog({ docId, categories: initialCategories, isNeo = false }: AddVideoDialogProps) {
+  const { neoTheme } = useDesign()
   const [open, setOpen] = useState(false)
   const [url, setUrl] = useState('')
   const [title, setTitle] = useState('')
@@ -132,7 +136,13 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
     <>
       <button
         onClick={() => setOpen(true)}
-        className="p-3 rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
+        className={cn(
+          "p-3 transition-all duration-200 hover:cursor-pointer",
+          isNeo
+            ? "border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+            : "rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black"
+        )}
+        style={isNeo ? { backgroundColor: neoTheme.secondary } : undefined}
         title="Add video"
       >
         <PlusIcon className="size-5" />
@@ -150,20 +160,39 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
           {/* Modal */}
           <div
             ref={formRef}
-            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6"
+            className={cn(
+              "relative w-full max-w-md bg-white p-6",
+              isNeo
+                ? "border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                : "rounded-2xl shadow-2xl"
+            )}
           >
             {/* Close button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full text-neutral-400 hover:text-black hover:bg-neutral-100 transition-colors"
+              className={cn(
+                "absolute top-4 right-4 size-8 flex items-center justify-center transition-colors",
+                isNeo
+                  ? "border-2 border-black hover:opacity-80"
+                  : "rounded-full text-neutral-400 hover:text-black hover:bg-neutral-100"
+              )}
+              style={isNeo ? { backgroundColor: neoTheme.primary } : undefined}
             >
               <XIcon className="size-5" />
             </button>
 
             {/* Header */}
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-black">Add New Video</h2>
-              <p className="text-sm text-neutral-500 mt-1">
+              <h2 className={cn(
+                "text-xl font-bold text-black",
+                isNeo && "uppercase tracking-wide"
+              )}>
+                {isNeo ? "ADD NEW VIDEO" : "Add New Video"}
+              </h2>
+              <p className={cn(
+                "text-sm mt-1",
+                isNeo ? "text-black font-medium" : "text-neutral-500"
+              )}>
                 Add a YouTube video to your watch later collection
               </p>
             </div>
@@ -171,7 +200,10 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="title" className="block text-sm font-medium text-black mb-2">
+                <label htmlFor="title" className={cn(
+                  "block text-sm font-medium text-black mb-2",
+                  isNeo && "uppercase font-bold"
+                )}>
                   Video Title
                 </label>
                 <input
@@ -182,12 +214,20 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
                   onChange={(e) => setTitle(e.target.value)}
                   disabled={isLoading}
                   autoFocus
-                  className="w-full px-4 py-3 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
+                  className={cn(
+                    "w-full px-4 py-3 text-sm focus:outline-none transition-colors",
+                    isNeo
+                      ? "border-3 border-black focus:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                      : "rounded-xl border border-neutral-300 focus:border-black"
+                  )}
                 />
               </div>
 
               <div>
-                <label htmlFor="url" className="block text-sm font-medium text-black mb-2">
+                <label htmlFor="url" className={cn(
+                  "block text-sm font-medium text-black mb-2",
+                  isNeo && "uppercase font-bold"
+                )}>
                   YouTube URL
                 </label>
                 <input
@@ -197,12 +237,20 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   disabled={isLoading}
-                  className="w-full px-4 py-3 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
+                  className={cn(
+                    "w-full px-4 py-3 text-sm focus:outline-none transition-colors",
+                    isNeo
+                      ? "border-3 border-black focus:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                      : "rounded-xl border border-neutral-300 focus:border-black"
+                  )}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-black mb-2 flex items-center gap-2">
+                <label className={cn(
+                  "block text-sm font-medium text-black mb-2 flex items-center gap-2",
+                  isNeo && "uppercase font-bold"
+                )}>
                   <TagIcon className="size-4" />
                   Category (optional)
                 </label>
@@ -224,13 +272,24 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
                         }
                       }}
                       disabled={isAddingCategory}
-                      className="flex-1 px-4 py-2.5 text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors"
+                      className={cn(
+                        "flex-1 px-4 py-2.5 text-sm focus:outline-none transition-colors",
+                        isNeo
+                          ? "border-3 border-black focus:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                          : "rounded-xl border border-neutral-300 focus:border-black"
+                      )}
                     />
                     <button
                       type="button"
                       onClick={handleAddNewCategory}
                       disabled={isAddingCategory || !newCategoryName.trim()}
-                      className="px-4 py-2.5 rounded-xl bg-[#1a1a1a] text-[#f5f5f0] text-sm font-medium hover:bg-black disabled:opacity-50 transition-colors"
+                      className={cn(
+                        "px-4 py-2.5 text-sm font-medium disabled:opacity-50 transition-all",
+                        isNeo
+                          ? "border-3 border-black text-black font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                          : "rounded-xl bg-[#1a1a1a] text-[#f5f5f0] hover:bg-black"
+                      )}
+                      style={isNeo ? { backgroundColor: neoTheme.secondary } : undefined}
                     >
                       {isAddingCategory ? 'Adding...' : 'Add'}
                     </button>
@@ -240,17 +299,29 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
                         setShowNewCategoryInput(false)
                         setNewCategoryName('')
                       }}
-                      className="px-3 py-2.5 rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
+                      className={cn(
+                        "px-3 py-2.5 transition-colors",
+                        isNeo
+                          ? "bg-white border-3 border-black hover:bg-neutral-100"
+                          : "rounded-xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                      )}
                     >
                       <XIcon className="size-4" />
                     </button>
                   </div>
                 ) : (
                   <Select value={category} onValueChange={handleCategoryChange} disabled={isLoading}>
-                    <SelectTrigger className="w-full px-4 py-3 h-auto text-sm rounded-xl border border-neutral-300 focus:outline-none focus:border-black transition-colors bg-white">
+                    <SelectTrigger className={cn(
+                      "w-full px-4 py-3 h-auto text-sm focus:outline-none transition-colors bg-white",
+                      isNeo
+                        ? "rounded-none border-3 border-black"
+                        : "rounded-xl border border-neutral-300 focus:border-black"
+                    )}>
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
-                    <SelectContent className="rounded-xl">
+                    <SelectContent className={cn(
+                      isNeo ? "rounded-none border-3 border-black" : "rounded-xl"
+                    )}>
                       <SelectItem value="__none__">None</SelectItem>
                       {categories.map((cat) => (
                         <SelectItem key={cat} value={cat}>
@@ -268,7 +339,15 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
               </div>
 
               {error && (
-                <p className="text-red-500 text-sm bg-red-50 p-3 rounded-xl">
+                <p
+                  className={cn(
+                    "text-sm p-3",
+                    isNeo
+                      ? "border-3 border-black text-black font-bold"
+                      : "text-red-500 bg-red-50 rounded-xl"
+                  )}
+                  style={isNeo ? { backgroundColor: neoTheme.primary } : undefined}
+                >
                   {error}
                 </p>
               )}
@@ -278,16 +357,27 @@ export function AddVideoDialog({ docId, categories: initialCategories }: AddVide
                   type="button"
                   onClick={handleClose}
                   disabled={isLoading}
-                  className="flex-1 px-5 py-3.5 rounded-2xl bg-neutral-100 text-neutral-600 text-sm font-medium hover:bg-neutral-200 transition-colors"
+                  className={cn(
+                    "flex-1 px-5 py-3.5 text-sm font-medium transition-all",
+                    isNeo
+                      ? "bg-white border-3 border-black text-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px]"
+                      : "rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                  )}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 px-5 py-3.5 rounded-2xl bg-[#1a1a1a] text-[#f5f5f0] text-sm font-medium shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)] disabled:opacity-50 transition-all"
+                  className={cn(
+                    "flex-1 px-5 py-3.5 text-sm font-medium disabled:opacity-50 transition-all",
+                    isNeo
+                      ? "border-3 border-black text-black font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                      : "rounded-2xl bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)]"
+                  )}
+                  style={isNeo ? { backgroundColor: neoTheme.primary } : undefined}
                 >
-                  {isLoading ? 'Adding...' : 'Add Video'}
+                  {isLoading ? 'Adding...' : (isNeo ? 'ADD VIDEO' : 'Add Video')}
                 </button>
               </div>
             </form>

@@ -6,6 +6,7 @@ import { getYouTubeThumbnailFromUrl } from '@/lib/youtube'
 import { moveYouTubeLink, updateYouTubeLinkCategory, addCategory } from '@/actions/video-actions'
 import { PlayIcon, CheckCircleIcon, EyeIcon, FolderIcon, ArrowRightLeftIcon, XIcon, TagIcon, PlusIcon, MoreVerticalIcon } from 'lucide-react'
 import gsap from 'gsap'
+import { cn } from '@/lib/utils'
 import {
   Select,
   SelectContent,
@@ -20,6 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { useDesign } from '@/components/providers/design-provider'
 
 interface Document {
   id: string
@@ -39,9 +41,11 @@ interface VideoCardProps {
   }
   otherDocuments: Document[]
   categories: string[]
+  isNeo?: boolean
 }
 
-export function VideoCard({ docId, docName, link, otherDocuments, categories: initialCategories }: VideoCardProps) {
+export function VideoCard({ docId, docName, link, otherDocuments, categories: initialCategories, isNeo = false }: VideoCardProps) {
+  const { neoTheme } = useDesign()
   const [showMoveDialog, setShowMoveDialog] = useState(false)
   const [showCategoryDialog, setShowCategoryDialog] = useState(false)
   const [isMoving, setIsMoving] = useState(false)
@@ -198,21 +202,35 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
     <>
       <div
         ref={cardRef}
-        className="group relative rounded-2xl border border-neutral-200 bg-white overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-neutral-300"
+        className={cn(
+          "group relative bg-white overflow-hidden transition-all duration-300",
+          isNeo
+            ? "border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+            : "rounded-2xl border border-neutral-200 hover:shadow-xl hover:border-neutral-300"
+        )}
       >
         {/* Thumbnail */}
-        <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden">
+        <div
+          className={cn(
+            "relative w-full aspect-video overflow-hidden",
+            isNeo ? "border-b-3 border-black" : "bg-neutral-100"
+          )}
+          style={isNeo ? { backgroundColor: neoTheme.card } : undefined}
+        >
           {thumbnailUrl ? (
             <Image
               src={thumbnailUrl}
               alt={link.title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className={cn(
+                "object-cover transition-transform duration-500",
+                isNeo ? "" : "group-hover:scale-105"
+              )}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
-              <PlayIcon className="size-12 text-neutral-300" />
+              <PlayIcon className={cn("size-12", isNeo ? "text-black" : "text-neutral-300")} />
             </div>
           )}
 
@@ -222,7 +240,15 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
             className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-all duration-300 cursor-pointer"
           >
             <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
-              <div className="size-16 rounded-full bg-white flex items-center justify-center shadow-lg">
+              <div
+                className={cn(
+                  "size-16 flex items-center justify-center",
+                  isNeo
+                    ? "border-3 border-black"
+                    : "rounded-full bg-white shadow-lg"
+                )}
+                style={isNeo ? { backgroundColor: neoTheme.primary } : undefined}
+              >
                 <PlayIcon className="size-7 text-black fill-black ml-1" />
               </div>
             </div>
@@ -230,7 +256,15 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
 
           {/* Watched badge */}
           {link.watched && (
-            <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-black text-white text-xs font-medium flex items-center gap-1.5">
+            <div
+              className={cn(
+                "absolute top-3 left-3 px-3 py-1.5 text-xs font-medium flex items-center gap-1.5",
+                isNeo
+                  ? "border-2 border-black text-black font-bold uppercase"
+                  : "rounded-full bg-black text-white"
+              )}
+              style={isNeo ? { backgroundColor: neoTheme.secondary } : undefined}
+            >
               <CheckCircleIcon className="size-3.5" />
               Watched
             </div>
@@ -240,7 +274,13 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
           {currentCategory && (
             <button
               onClick={() => setShowCategoryDialog(true)}
-              className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/90 text-black text-xs font-medium shadow-sm hover:bg-white hover:shadow-md transition-all cursor-pointer"
+              className={cn(
+                "absolute top-3 right-3 px-3 py-1.5 text-xs font-medium transition-all cursor-pointer",
+                isNeo
+                  ? "border-2 border-black text-black font-bold hover:opacity-80"
+                  : "rounded-full bg-white/90 text-black shadow-sm hover:bg-white hover:shadow-md"
+              )}
+              style={isNeo ? { backgroundColor: neoTheme.accent } : undefined}
             >
               {currentCategory}
             </button>
@@ -248,18 +288,24 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
         </div>
 
         {/* Content */}
-        <div className="p-5">
-          <h3 className="font-semibold text-sm text-black line-clamp-2 mb-3 min-h-[2.5rem]">
+        <div className={cn("p-5", isNeo && "bg-white")}>
+          <h3 className={cn(
+            "text-sm text-black line-clamp-2 mb-3 min-h-[2.5rem]",
+            isNeo ? "font-bold uppercase" : "font-semibold"
+          )}>
             {link.title}
           </h3>
 
           {/* Meta info */}
-          <div className="flex items-center gap-3 text-xs text-neutral-500 mb-5">
+          <div className={cn(
+            "flex items-center gap-3 text-xs mb-5",
+            isNeo ? "text-black font-medium" : "text-neutral-500"
+          )}>
             <div className="flex items-center gap-1.5">
               <FolderIcon className="size-3.5" />
               <span className="truncate max-w-[100px]">{docName}</span>
             </div>
-            <span className="text-neutral-300">|</span>
+            <span className={isNeo ? "text-black" : "text-neutral-300"}>|</span>
             <span>{new Date(link.addedAt).toLocaleDateString()}</span>
           </div>
 
@@ -267,21 +313,36 @@ export function VideoCard({ docId, docName, link, otherDocuments, categories: in
           <div className="flex items-center gap-3">
             <button
               onClick={handleWatch}
-              className="hover:cursor-pointer flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-[#1a1a1a] text-[#f5f5f0] text-sm font-medium transition-all shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)]"
+              className={cn(
+                "hover:cursor-pointer flex-1 flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium transition-all",
+                isNeo
+                  ? "border-3 border-black text-black font-bold uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                  : "rounded-2xl bg-[#1a1a1a] text-[#f5f5f0] shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)]"
+              )}
+              style={isNeo ? { backgroundColor: neoTheme.primary } : undefined}
             >
               <EyeIcon className="size-4" />
-              Watch Now
+              {isNeo ? "WATCH" : "Watch Now"}
             </button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className="p-3 rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black transition-all duration-200 hover:cursor-pointer"
+                  className={cn(
+                    "p-3 transition-all duration-200 hover:cursor-pointer",
+                    isNeo
+                      ? "border-3 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                      : "rounded-2xl bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black"
+                  )}
+                  style={isNeo ? { backgroundColor: neoTheme.secondary } : undefined}
                   title="More options"
                 >
                   <MoreVerticalIcon className="size-4" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 rounded-xl">
+              <DropdownMenuContent align="end" className={cn(
+                "w-48",
+                isNeo ? "rounded-none border-3 border-black" : "rounded-xl"
+              )}>
                 <DropdownMenuItem
                   onClick={() => setShowCategoryDialog(true)}
                   className="cursor-pointer"
